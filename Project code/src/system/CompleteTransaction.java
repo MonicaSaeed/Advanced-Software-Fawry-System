@@ -28,11 +28,11 @@ public class CompleteTransaction {
 		return this.servicePrice;
 	}
 	public Vector<CompleteTransaction> getCompleteServices(){
-		return this.completeServices;
+		return CompleteTransaction.completeServices;
 	}
 
     public void setServiceUserName(String serviceUser) {
-		this.serviceUserName = serviceUserName;
+		this.serviceUserName = serviceUser;
 	}
 	public void setServiceName(String serviceName) {
 		this.serviceName = serviceName;

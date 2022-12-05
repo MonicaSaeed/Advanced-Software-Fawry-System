@@ -3,12 +3,13 @@ package system;
 public class InternetPayment extends Services {
 	
 	public InternetPayment(int noOfFields, boolean cash) {
-		super(noOfFields, cash);
 		// TODO Auto-generated constructor stub
-		this.payByCash=cash;
-		this.serviceName="Internet Payment service";
-		this.form=new Form(noOfFields);
-		this.payment=new CreditCard();
+		//super(noOfFields, cash);
+
+		super.payByCash=cash;
+		super.serviceName="Internet Payment service";
+		super.form=new Form(noOfFields);
+		super.payment=new CreditCard();
 	}
 
 	@Override

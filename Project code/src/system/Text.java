@@ -6,13 +6,14 @@ public class Text implements FormFields {
 	public String text; //string for the text field
 	public String fieldName;
 	Scanner scanInput = new Scanner(System.in);
+
 	
 	@Override
 	public String getText() {
 	    return this.text;
 	  }
 	  
-	@Override
+	  @Override
 	public String getfieldName() {
 		    return this.fieldName;
 	  }
@@ -43,6 +44,7 @@ public class Text implements FormFields {
 		System.out.print("enter the text");
 		t=scanInput.next();
 		this.text = t;
-		
+
 	}
+
 }

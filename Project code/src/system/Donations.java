@@ -3,12 +3,13 @@ package system;
 public class Donations extends Services {
 	
 	public Donations(int noOfFields, boolean cash) {
-		super(noOfFields, cash);
 		// TODO Auto-generated constructor stub
-		this.payByCash=cash;
-		this.serviceName="Donation service";
-		this.form=new Form(noOfFields);
-		this.payment=new CreditCard();
+		//super(noOfFields, cash);
+
+		super.payByCash=cash;
+		super.serviceName="Donation service";
+		super.form=new Form(noOfFields);
+		super.payment=new CreditCard();
 	}
 
 	@Override

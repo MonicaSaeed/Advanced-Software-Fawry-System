@@ -5,16 +5,16 @@ import java.util.Vector;
 public class CreditCard implements Payment {
 	private String creditCardNumber;
 	private String password;
-	private float accountBalance, amountToPay;
+	private float accountBalance;
 	public Vector <CreditCard> v1= new Vector <>();
 	
 	
-	public CreditCard(String creditCardNumber, String password, float accountBalance, float amountToPay)
+	public CreditCard(String creditCardNumber, String password, float accountBalance)
 	{
 		this.creditCardNumber=creditCardNumber;
 		this.password=password;
 		this.accountBalance=accountBalance;
-		this.amountToPay=amountToPay;	
+		//this.amountToPay=amountToPay;	
 	}
 	public CreditCard() {
 		// TODO Auto-generated constructor stub

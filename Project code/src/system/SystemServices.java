@@ -10,7 +10,7 @@ public class SystemServices {
 	public static Vector<Services> donationsVec = new Vector<>();
 	
 	
-	private Services cTrans=null;
+	//private Services cTrans=null;
 	public void searchForService(int serviceName)
 	{
 		//Vector<Services> matchingServices=new Vector();

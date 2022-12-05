@@ -14,7 +14,7 @@ public class Main {
 		FawryAdmin admin= new FawryAdmin("Ali","ali@gmail.com","123456",true);
 		
 		////you must creat some services to work on in the project
-		/*MobileRecharge orange= new MobileRecharge(2, false);
+		MobileRecharge orange= new MobileRecharge(2, false);
 		SystemServices.mobileRechargeVec.add(orange);
 		MobileRecharge vodafone= new MobileRecharge(2, false);
 		SystemServices.mobileRechargeVec.add(vodafone);
@@ -23,11 +23,11 @@ public class Main {
 		InternetPayment we= new InternetPayment(3, false);
 		SystemServices.internetPaymentVec.add(we);
 		Landline quarter=new Landline(2, true);
-		SystemServices.landlineVec.add(quarter);*/
-		Landline monthly=new Landline(1, true);
+		SystemServices.landlineVec.add(quarter);
+		Landline monthly=new Landline(2, true);
 		SystemServices.landlineVec.add(monthly);
-		//Donations cancerHospital= new Donations(1, false);
-		//SystemServices.donationsVec.add(cancerHospital);
+		Donations cancerHospital= new Donations(3, false);
+		SystemServices.donationsVec.add(cancerHospital);
 		
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -59,7 +59,7 @@ public class Main {
 				FUValid.setUserType(false);
 			}
 			
-			F.fawryUsers.add(FUValid);
+			FawryUser.fawryUsers.add(FUValid);
 			System.out.println("Signed up successfully");
 		}
 		
@@ -75,10 +75,10 @@ public class Main {
 			if(in != "not found"){
 				F.setPassword(pass);
 				F.setUserName(name);
-				for(int i=0;i<F.fawryUsers.size();i++){
-					if(F.fawryUsers.get(i).getUserName().equals(name) && F.fawryUsers.get(i).getPassword().equals(pass)){
-						F.setEmail(F.fawryUsers.get(i).getEmail());
-						F.setUserType(F.fawryUsers.get(i).getUserType());
+				for(int i=0;i<FawryUser.fawryUsers.size();i++){
+					if(FawryUser.fawryUsers.get(i).getUserName().equals(name) && F.fawryUsers.get(i).getPassword().equals(pass)){
+						F.setEmail(FawryUser.fawryUsers.get(i).getEmail());
+						F.setUserType(FawryUser.fawryUsers.get(i).getUserType());
 					}
 				}
 				
@@ -115,19 +115,24 @@ public class Main {
 			else if(choice==2)
 			{
 				monthly.makeTransaction();
-
 			}
 			else if(choice==3)
 			{
-				
+				System.out.println("enter service name: ");
+				String ser = sc.next();
+				F.requestRefund(admin, ser, F.getUserName());
+				admin.checkRefund(ser,F.getUserName());
 			}
 			else if(choice==4)
 			{
-				
+				Wallet w=new Wallet(80,20);
+				CreditCard c = new CreditCard("123","***",80);
+				w.addFunds(c, 10);
 			}
 			else if(choice==5)
 			{
-				
+				DiscountViewer d=new DiscountViewer();
+				d.viewDiscounts();
 			}
 			
 		}while(choice!=6);

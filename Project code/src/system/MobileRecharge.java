@@ -4,12 +4,13 @@ public class MobileRecharge extends Services {
 	
 	
 	public MobileRecharge(int noOfFields,boolean cash) {
-		super(noOfFields, cash);
 		// TODO Auto-generated constructor stub
-		this.payByCash=cash;
-		this.serviceName="Mobile Recharge service";
-		this.form=new Form(noOfFields);
-		this.payment=new CreditCard();
+		//super(noOfFields, cash);
+
+		super.payByCash=cash;
+		super.serviceName="Mobile Recharge service";
+		super.form=new Form(noOfFields);
+		super.payment=new CreditCard();
 		
 	}
 

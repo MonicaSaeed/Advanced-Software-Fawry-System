@@ -9,9 +9,13 @@ public class DiscountViewer {
 	private Vector<Discounts> disList= new Vector<Discounts>();
 
 	
-	public void viewDiscount() 
+	public void viewDiscounts() 
 	{
-		System.out.print("Discount name	"+dName+"\nDiscount type: "+dType+"\nDiscount value: "+dValue+"%\n");
+		for(int i=0;i<disList.size();i++)
+		{
+			System.out.print("Discount name	"+disList.get(i).getDName()+"\nDiscount type: "+disList.get(i).getDType()+"\nDiscount value: "+disList.get(i).getDValue()+"%\n");
+
+		}
 		
 	}
 	

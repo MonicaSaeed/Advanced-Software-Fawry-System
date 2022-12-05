@@ -17,9 +17,9 @@ public class OverallDiscount extends Discounts {
 	public boolean checkDiscountValidation(String user)
 	{
 		int noOFTRansac=0;
-		for(int i=0; i<cTrans.completeServices.size();i++)
+		for(int i=0; i<CompleteTransaction.completeServices.size();i++)
 		{
-			if(cTrans.completeServices.get(i).getServiceUserName().equals(user))
+			if(CompleteTransaction.completeServices.get(i).getServiceUserName().equals(user))
 			{
 				noOFTRansac++;
 			}
