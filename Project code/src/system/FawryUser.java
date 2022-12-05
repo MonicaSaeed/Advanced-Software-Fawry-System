@@ -9,6 +9,15 @@ public class FawryUser {
 	private boolean userType;  //Check if the user is an admin or not (admin -> true, user->false)
 	public static Vector<FawryUser> fawryUsers = new Vector<>(); //to save all users' data
 	
+	FawryUser(){
+		
+	}
+	FawryUser(String userName,String password,String email,boolean userType){
+		this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this. userType = userType;
+	}
 	public String getUserName() {
 		return userName;
 	}
@@ -84,5 +93,10 @@ public class FawryUser {
 			return "not found";
 		} 
 	}
-}
 
+	//if user want to refund, the user shoud send serves name 
+	void requestRefund (FawryAdmin f,String servesName,String userName){
+		f.checkRefund(servesName, userName);
+	}
+
+}
