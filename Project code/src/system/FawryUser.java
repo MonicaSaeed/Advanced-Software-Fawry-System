@@ -46,7 +46,7 @@ public class FawryUser {
             FawryUser FU = fawryUsers.get(i);
             String UN = FU.getUserName();
             String E = FU.getEmail();
-            if(userName == UN || email == E){
+            if(userName.equals(UN) || email.equals(E)){
                 System.out.println("user already exist (name or email)");
                 valid = "no";
 				break;
@@ -65,7 +65,7 @@ public class FawryUser {
             FawryUser FU = fawryUsers.get(i);
             String UN = FU.getUserName();
             String p = FU.getPassword();
-            if(userName == UN && password==p ){
+            if(userName.equals(UN)  && password.equals(p) ){
 				b=FU.getUserType();
 				userTypeReturn="yes";
 				break;
