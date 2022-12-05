@@ -3,10 +3,10 @@ package system;
 import java.util.*;  
 
 public class FawryUser {
-	private String userName;
-	private String password;
-	private String email;
-	private boolean userType;  //Check if the user is an admin or not (admin -> true, user->false)
+	protected String userName;
+	protected String password;
+	protected String email;
+	protected boolean userType;  //Check if the user is an admin or not (admin -> true, user->false)
 	public static Vector<FawryUser> fawryUsers = new Vector<>(); //to save all users' data
 	
 	FawryUser(){

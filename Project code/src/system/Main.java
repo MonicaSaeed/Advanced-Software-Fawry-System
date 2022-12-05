@@ -10,6 +10,27 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		FawryUser F = new FawryUser();
 		
+		SystemServices systemServices=new SystemServices();
+		FawryAdmin admin= new FawryAdmin("Ali","ali@gmail.com","123456",true);
+		
+		////you must creat some services to work on in the project
+		MobileRecharge orange= new MobileRecharge(2, false);
+		systemServices.mobileRechargeVec.add(orange);
+		MobileRecharge vodafone= new MobileRecharge(2, false);
+		systemServices.mobileRechargeVec.add(vodafone);
+		InternetPayment etisalat= new InternetPayment(3, false);
+		systemServices.internetPaymentVec.add(etisalat);
+		InternetPayment we= new InternetPayment(3, false);
+		systemServices.internetPaymentVec.add(we);
+		Landline quarter=new Landline(2, true);
+		systemServices.landlineVec.add(quarter);
+		Landline monthly=new Landline(2, true);
+		systemServices.landlineVec.add(monthly);
+		Donations cancerHospital= new Donations(3, false);
+		systemServices.donationsVec.add(cancerHospital);
+		
+		
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//must enter 3 users valid to sign up to continue the program to sign in user
 		for(int i=0;i<3;i++) {
 			String up;
@@ -66,15 +87,56 @@ public class Main {
 		System.out.println("Signed in successfully");
 		System.out.println("");System.out.println("");
 
-		//System.out.println(F.getEmail());
-		//System.out.println(F.getUserName());
-		//System.out.println(F.getPassword());
-		//System.out.println(F.getUserType());
-
-		if(F.getUserType()==true){
-
-		}
-		//F.requestRefund( F, "hsbhh", F.getUserName());
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		int choice=6;
+		do {
+			System.out.print("Choose action from thr following menu\n");
+			System.out.print("1/ Search for a service\n");
+			System.out.print("2/ pay for a service\n");
+			System.out.print("3/ make a refund\n");
+			System.out.print("4/ add to wollet\n");
+			System.out.print("5/ view all discounts\n");
+			System.out.print("6/ exit");
+			choice=sc.nextInt();
+			
+			if(choice==1) 
+			{
+				int servicChoice;
+				System.out.print("Choose service name\n");
+				System.out.print("1/ Mobile Recharge\n");
+				System.out.print("2/ Internet Payment\n");
+				System.out.print("3/ Landline\n");
+				System.out.print("4/ Donations\n");
+				servicChoice=sc.nextInt();
+				
+				if(servicChoice==1) {
+					systemServices.searchForService("Mobile Recharge service");
+				}else if(servicChoice==2) {
+					systemServices.searchForService("Internet Payment service");
+				}else if(servicChoice==3) {
+					systemServices.searchForService("Landline Service");
+				}else if(servicChoice==4) {
+					systemServices.searchForService("Donation service");
+				}
+			}
+			else if(choice==2)
+			{
+				
+			}
+			else if(choice==3)
+			{
+				
+			}
+			else if(choice==4)
+			{
+				
+			}
+			else if(choice==5)
+			{
+				
+			}
+			
+		}while(choice!=6);
 		
 	}
 

@@ -2,7 +2,15 @@ package system;
 
 public class FawryAdmin extends FawryUser {
 
-    public float checkRefund(String servesName,String userName){
+    public FawryAdmin(String string, String string2, String string3, boolean b) {
+		// TODO Auto-generated constructor stub
+    	this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this. userType = userType;
+	}
+
+	public float checkRefund(String servesName,String userName){
         CompleteTransaction CtObj=null;
 
         for(int i=0;i< CtObj.completeServices.size();i++){
