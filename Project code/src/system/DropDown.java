@@ -5,24 +5,48 @@ import java.util.Scanner;
 public class DropDown implements FormFields {
 	
 	public int fieldsInMenue;
-	String[] stringArray;
+	public String textInMenue;
+	String[] stringArray; // array of fields inside the menu
 	Scanner scanInput = new Scanner(System.in);
+	public String fieldName;
+	
+	public String getfieldName() {
+	    return fieldName;
+	}
+	public void setfieldName(String fN) {
+	    this.fieldName = fN;
+	}
 
-	@Override
-	public void createFields() 
+
+	public DropDown(String fName) 
 	{
+		this.fieldName=fName;
 		System.out.print(" Enter number of fields in DropDown menue ");
 		
 		fieldsInMenue =scanInput.nextInt();
+		
 		stringArray = new String[fieldsInMenue]; 
 
 		for(int i=0;i<=fieldsInMenue ;i++)
-		{ 			
-			stringArray[i]= "hhhh";  ///enter data to array 
+		{ 		
+			textInMenue =scanInput.nextInt();
+			stringArray[i]= textInMenue;  ///enter data to array 
 		}
 
 	} 
+	
+	@Override
+	public void showFields() {
+		
+		System.out.print(this.fieldName);
 
-
+		for(int i=0;i<=fieldsInMenue ;i++)
+		{ 		
+			System.out.print(stringArray[i]); ///print data of the menu 
+		}
+	
+	}
+	@Override
+	public void fillFields() {}
 
 }
