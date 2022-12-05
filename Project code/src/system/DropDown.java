@@ -32,7 +32,7 @@ public class DropDown implements FormFields {
 		
 		stringArray = new String[fieldsInMenue]; 
 
-		for(int i=0;i<=fieldsInMenue ;i++)
+		for(int i=0;i<fieldsInMenue ;i++)
 		{ 		
 			textInMenue =scanInput.next();
 			stringArray[i]= textInMenue;  ///enter data to array 
@@ -45,7 +45,7 @@ public class DropDown implements FormFields {
 		
 		System.out.print(this.fieldName);
 
-		for(int i=0;i<=fieldsInMenue ;i++)
+		for(int i=0;i<fieldsInMenue ;i++)
 		{ 		
 			System.out.print(stringArray[i]); ///print data of the menu 
 		}

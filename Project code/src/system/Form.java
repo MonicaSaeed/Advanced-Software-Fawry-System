@@ -28,12 +28,12 @@ public class Form {
 	{
 	    //Form F= new Form() ;
 
-		for(int i=0;i<=numberOfFields ;i++)
+		for(int i=0;i<numberOfFields ;i++)
 		{  
 			String fieldName;
 			
 			int choice ;
-			System.out.print(" choose field type if \n DropDown-> 1 \n text->2");
+			System.out.println(" choose field type if \n DropDown-> 1 \n text->2");
 			choice =scanInput.nextInt();
 
 			System.out.print(" Enter field name :");
@@ -42,25 +42,25 @@ public class Form {
 			if (choice==1)
 			{
 				DropDown D =new DropDown(fieldName); 
-				this.vec.add(D);
+				vec.add(D);
 
 			}
 			else if (choice==2)
 			{
-				this.vec.add(new Text(fieldName));
+				vec.add(new Text(fieldName));
 			}			
 	    }
 	}
 	public void showForm()
 	{
-		for(int i=0;i<=numberOfFields ;i++)
+		for(int i=0;i<numberOfFields ;i++)
 		{
 			this.vec.get(i).showFields();
 		}
 	}
 	public void setForm()
 	{
-		for(int i=0;i<=numberOfFields ;i++)
+		for(int i=0;i<numberOfFields ;i++)
 		{
 			this.vec.get(i).setFields();;
 		}

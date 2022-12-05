@@ -11,25 +11,25 @@ public class SystemServices {
 	
 	
 	private Services cTrans=null;
-	public void searchForService(String serviceName)
+	public void searchForService(int serviceName)
 	{
 		//Vector<Services> matchingServices=new Vector();
-		if(mobileRechargeVec.get(0).getServiceName().equals(serviceName)) {
+		if(serviceName==1) {
 			for(int i=0;i< mobileRechargeVec.size();i++)
 			{
 				System.out.print("Service "+i+":	"+mobileRechargeVec.get(i).getServiceName());
 			}
-		}else if(internetPaymentVec.get(0).getServiceName().equals(serviceName)) {
+		}else if(serviceName==2) {
 			for(int i=0;i< internetPaymentVec.size();i++)
 			{
 				System.out.print("Service "+i+":	"+internetPaymentVec.get(i).getServiceName());
 			}
-		}else if(landlineVec.get(0).getServiceName().equals(serviceName)) {
+		}else if(serviceName==3) {
 			for(int i=0;i< landlineVec.size();i++)
 			{
 				System.out.print("Service "+i+":	"+landlineVec.get(i).getServiceName());
 			}
-		}else if(donationsVec.get(0).getServiceName().equals(serviceName)) {
+		}else if(serviceName==4) {
 			for(int i=0;i< donationsVec.size();i++)
 			{
 				System.out.print("Service "+i+":	"+donationsVec.get(i).getServiceName());

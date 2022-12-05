@@ -14,25 +14,25 @@ public class Main {
 		FawryAdmin admin= new FawryAdmin("Ali","ali@gmail.com","123456",true);
 		
 		////you must creat some services to work on in the project
-		MobileRecharge orange= new MobileRecharge(2, false);
-		systemServices.mobileRechargeVec.add(orange);
+		/*MobileRecharge orange= new MobileRecharge(2, false);
+		SystemServices.mobileRechargeVec.add(orange);
 		MobileRecharge vodafone= new MobileRecharge(2, false);
-		systemServices.mobileRechargeVec.add(vodafone);
+		SystemServices.mobileRechargeVec.add(vodafone);
 		InternetPayment etisalat= new InternetPayment(3, false);
-		systemServices.internetPaymentVec.add(etisalat);
+		SystemServices.internetPaymentVec.add(etisalat);
 		InternetPayment we= new InternetPayment(3, false);
-		systemServices.internetPaymentVec.add(we);
+		SystemServices.internetPaymentVec.add(we);
 		Landline quarter=new Landline(2, true);
-		systemServices.landlineVec.add(quarter);
-		Landline monthly=new Landline(2, true);
-		systemServices.landlineVec.add(monthly);
-		Donations cancerHospital= new Donations(3, false);
-		systemServices.donationsVec.add(cancerHospital);
+		SystemServices.landlineVec.add(quarter);*/
+		Landline monthly=new Landline(1, true);
+		SystemServices.landlineVec.add(monthly);
+		//Donations cancerHospital= new Donations(1, false);
+		//SystemServices.donationsVec.add(cancerHospital);
 		
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//must enter 3 users valid to sign up to continue the program to sign in user
-		for(int i=0;i<3;i++) {
+		for(int i=0;i<2;i++) {
 			String up;
 			String username,email,pass;
 			int userType;
@@ -96,7 +96,7 @@ public class Main {
 			System.out.print("3/ make a refund\n");
 			System.out.print("4/ add to wollet\n");
 			System.out.print("5/ view all discounts\n");
-			System.out.print("6/ exit");
+			System.out.print("6/ exit\n");
 			choice=sc.nextInt();
 			
 			if(choice==1) 
@@ -109,19 +109,13 @@ public class Main {
 				System.out.print("4/ Donations\n");
 				servicChoice=sc.nextInt();
 				
-				if(servicChoice==1) {
-					systemServices.searchForService("Mobile Recharge service");
-				}else if(servicChoice==2) {
-					systemServices.searchForService("Internet Payment service");
-				}else if(servicChoice==3) {
-					systemServices.searchForService("Landline Service");
-				}else if(servicChoice==4) {
-					systemServices.searchForService("Donation service");
-				}
+				systemServices.searchForService(servicChoice);
+
 			}
 			else if(choice==2)
 			{
-				
+				monthly.makeTransaction();
+
 			}
 			else if(choice==3)
 			{

@@ -3,6 +3,7 @@ package system;
 public class Donations extends Services {
 	
 	public Donations(int noOfFields, boolean cash) {
+		super(noOfFields, cash);
 		// TODO Auto-generated constructor stub
 		this.payByCash=cash;
 		this.serviceName="Donation service";

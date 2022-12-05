@@ -13,6 +13,15 @@ public abstract class Services{
 	protected float paymentAmount;
 	//protected SystemServices systemServices;
 	
+	public Services(int noOfFields,boolean cash) {
+		// TODO Auto-generated constructor stub
+		this.payByCash=cash;
+		this.serviceName="service";
+		this.form=new Form(noOfFields);
+		this.payment=new CreditCard();
+		
+	}
+
 	final void makeTransaction() {
 		
 		sendForm();
@@ -32,7 +41,7 @@ public abstract class Services{
 		
 		if(this.payByCash==true)
 		{
-			System.out.print("you are using your credit card if you want to pay from wallet press 1, pay cash press 2,press 0 to continue using credit card");
+			System.out.print("you are using your credit card if you want to pay from wallet press 1, pay cash press 2,press 0 to continue using credit card ");
 			int choice;
 			
 			choice=input.nextInt();
@@ -51,13 +60,13 @@ public abstract class Services{
 			else 
 			{
 				this.payment=new CreditCard();
-				System.out.print("enter credit card info");
+				System.out.println("enter credit card info credit card number and password and account balance");
 				creditCardNumber=input.next();
 				password=input.next();
 				accountBalance=input.nextFloat();
 				for(int i=0;i<card.v1.size();i++)
 				{
-					if(card.v1.get(i).getCRN().equals(creditCardNumber)&&card.v1.get(i).getPassword().equals(password)) {
+					if(card.v1.get(i).getCRN().equals(creditCardNumber) && card.v1.get(i).getPassword().equals(password)) {
 						System.out.print("credit card already exist");	
 					}
 					else
