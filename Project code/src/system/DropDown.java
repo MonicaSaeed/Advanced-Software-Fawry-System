@@ -1,15 +1,20 @@
 package system;
 
 import java.util.Scanner;
+import java.util.Vector;
 
 public class DropDown implements FormFields {
 	
 	public int fieldsInMenue;
 	public String textInMenue;
-	String[] stringArray; // array of fields inside the menu
+	private String[] stringArray; // array of fields inside the menu
+	//private Vector<String> stringArray;
 	Scanner scanInput = new Scanner(System.in);
 	public String fieldName;
+	private String choosenOption;
 	
+	
+	@overide
 	public String getfieldName() {
 	    return fieldName;
 	}
@@ -29,7 +34,7 @@ public class DropDown implements FormFields {
 
 		for(int i=0;i<=fieldsInMenue ;i++)
 		{ 		
-			textInMenue =scanInput.nextInt();
+			textInMenue =scanInput.next();
 			stringArray[i]= textInMenue;  ///enter data to array 
 		}
 
@@ -47,6 +52,24 @@ public class DropDown implements FormFields {
 	
 	}
 	@Override
-	public void fillFields() {}
+	public void setFields() 
+	{
+		int index;
+		System.out.print("Enter the number of your choice: ");
+		index=scanInput.nextInt();
+		if(index>=stringArray.length)
+		{
+			return;
+		}
+		this.choosenOption=stringArray[index];
+	}
+	@Override
+	public String getText() {
+		// TODO Auto-generated method stub
+		
+		
+		return this.choosenOption;
+	}
+	
 
 }

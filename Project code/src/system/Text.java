@@ -6,15 +6,19 @@ public class Text implements FormFields {
 	public String text; //string for the text field
 	public String fieldName;
 	
+	
+	@overide
 	public String getText() {
-	    return text;
+	    return this.text;
 	  }
 	  public void setText(String t) {
 	    this.text = t;
 	  }
+	  @overide
 	public String getfieldName() {
-		    return fieldName;
+		    return this.fieldName;
 	  }
+	  
 	public void setfieldName(String fN) {
 		    this.fieldName = fN;
 	  }
@@ -36,6 +40,6 @@ public class Text implements FormFields {
 		//System.out.print(this.text); //print data in text field
 	}
 	@Override
-	public void fillFields() {}
+	public void setFields() {}
 
 }

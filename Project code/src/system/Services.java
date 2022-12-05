@@ -1,6 +1,7 @@
 package system;
 
 import java.util.Scanner;
+import java.util.*;
 
 public abstract class Services{
 	Scanner input= new Scanner(System.in);
@@ -12,28 +13,24 @@ public abstract class Services{
 	protected float paymentAmount;
 
 	
-	final void transaction() {
+	final void makeTransaction() {
 		
-		changePaymentMethod();
-		fillForm();
 		sendForm();
+		fillForm();
+		payment= changePaymentMethod();
+		servicePay(payment);
 		confirm();	
+		
 	}
-	public void payByWallet()
-	{
-		Wallet w = null;
-		w.pay(paymentAmount);
-	}
-	public void payByCash()
-	{
-		Cash c=null;
-		c.pay(paymentAmount);
-	}
-	private Payment changePaymentMethod() {
+	
+	
+	public Payment changePaymentMethod() {
+		
 		CreditCard card = null;
-		 String creditCardNumber, password;
-		 float accountBalance;
-		if(payByCash==true)
+		String creditCardNumber, password;
+		float accountBalance;
+		
+		if(this.payByCash==true)
 		{
 			System.out.print("you are using your credit card if you want to pay from wallet press 1, pay cash press 2,press 0 to continue using credit card");
 			int choice;
@@ -42,7 +39,6 @@ public abstract class Services{
 			if(choice==1)
 			{	
 				this.payment=new Wallet();
-				payByWallet();
 				return this.payment;
 				
 			}
@@ -50,7 +46,7 @@ public abstract class Services{
 			{
 				this.payment=new Cash();
 				return this.payment;
-				//payByCash();
+
 			}
 			else 
 			{
@@ -103,11 +99,26 @@ public abstract class Services{
 		// TODO Auto-generated method stub
 	}
 	
-	private void confirm() {
-		System.out.print("transaction done successfully");
-		// TODO Auto-generated method stub
-		
+	public void servicePay(Payment p)
+	{
+		String amountValue;
+		for(int i=0;i<this.form.vec.size();i++)
+		{
+			if(this.form.vec.get(i).getfieldName().equals("amount"));
+			this.paymentAmount = Float. valueOf(this.form.vec.get(i).getText());
+		}
+		p.pay(paymentAmount);
 	}
-	abstract void sendForm();
-	abstract void fillForm();
+	
+	
+	abstract void confirm();
+	public void sendForm()
+	{
+		this.form.showForm();
+	}
+	public void fillForm()
+	{
+		this.form.setForm();
+	}
 }
+
