@@ -7,7 +7,6 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-		int val = sc.nextInt();
 		FawryUser F = new FawryUser();
 		
 		
@@ -18,11 +17,11 @@ public class Main {
 			int userType;
 			do {
 				System.out.print("enter user name: ");
-				username = sc.nextLine();
+				username = sc.next();
 				System.out.print("enter email: ");
-				email = sc.nextLine();
+				email = sc.next();
 				System.out.print("enter password: ");
-				pass = sc.nextLine();
+				pass = sc.next();
 				System.out.print("enter 1 for admin, 2 for user: ");
 				userType=sc.nextInt();
 				up = F.signUp(username, email);
@@ -47,9 +46,9 @@ public class Main {
 		String in; //string to save if signed in user is user or admin 
 		do {
 			System.out.print("enter name: ");
-			String name = sc.nextLine();
+			String name = sc.next();
 			System.out.print("enter paassword: ");
-			String pass = sc.nextLine();
+			String pass = sc.next();
 			in = F.signIn(name, pass);
 		}while(in=="not found");
 		System.out.println("Signed in successfully");
