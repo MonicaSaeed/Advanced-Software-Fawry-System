@@ -1,5 +1,6 @@
 package system;
 
+
 import java.util.Scanner;
 
 public class Main {
@@ -52,8 +53,6 @@ public class Main {
 			in = F.signIn(name, pass);
 		}while(in=="not found");
 		System.out.println("Signed in successfully");
-		
-		
 		
 		
 		
