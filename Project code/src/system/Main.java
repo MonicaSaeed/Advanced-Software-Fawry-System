@@ -14,16 +14,21 @@ public class Main {
 		FawryAdmin admin= new FawryAdmin("Ali","ali@gmail.com","123456",true);
 		
 		////you must creat some services to work on in the project
-		MobileRecharge orange= new MobileRecharge(2, false);
-		SystemServices.mobileRechargeVec.add(orange);
-		MobileRecharge vodafone= new MobileRecharge(2, false);
-		SystemServices.mobileRechargeVec.add(vodafone);
-		InternetPayment etisalat= new InternetPayment(3, false);
-		SystemServices.internetPaymentVec.add(etisalat);
-		InternetPayment we= new InternetPayment(3, false);
-		SystemServices.internetPaymentVec.add(we);
-		Landline quarter=new Landline(2, true);
-		SystemServices.landlineVec.add(quarter);
+		
+		
+		/***the next comment block to check all services**/
+		
+		
+//		MobileRecharge orange= new MobileRecharge(2, false);
+//		SystemServices.mobileRechargeVec.add(orange);
+//		MobileRecharge vodafone= new MobileRecharge(2, false);
+//		SystemServices.mobileRechargeVec.add(vodafone);
+//		InternetPayment etisalat= new InternetPayment(3, false);
+//		SystemServices.internetPaymentVec.add(etisalat);
+//		InternetPayment we= new InternetPayment(3, false);
+//		SystemServices.internetPaymentVec.add(we);
+//		Landline quarter=new Landline(2, true);
+//		SystemServices.landlineVec.add(quarter);
 		Landline monthly=new Landline(2, true);
 		SystemServices.landlineVec.add(monthly);
 		Donations cancerHospital= new Donations(3, false);
