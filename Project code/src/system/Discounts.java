@@ -3,10 +3,19 @@ package system;
 import java.util.Vector;
 
 public abstract class Discounts {
-	private String dName,dType;
-	private int dValue;
+	protected String dName,dType;
+	protected int dValue;
 	public static Vector<Discounts> dList= new Vector<Discounts>();
-	private DiscountViewer dViewer;
+	protected DiscountViewer dViewer;
+	
+	
+	public Discounts(String dName, String dType, int dValue) {
+		// TODO Auto-generated constructor stub
+		this.dName=dName;
+		this.dType=dType;
+		this.dValue=dValue;
+		//this.checkValidation=condition;
+	}
 	
 	
 	public String getDName()
@@ -23,14 +32,20 @@ public abstract class Discounts {
 	}
 		
 	///Admin creating new discount
-	public void addDiscount(Discounts d, String type)
+	public void addDiscount(String dName, String dType, int dValue,String condition)
 	{
-		if(type.equals("admin"))
+		if(dType.equals("SpecificDiscount"))
 		{
-			dList.add(d);
+			Discounts newDis= new SpecificDiscount(dName,dType,dValue);
+			dList.add(newDis);
 			notify();
 		}
-		else {System.out.print("Only admins can add new discounts...");}
+		else if(dType.equals("OverallDiscount"))
+		{
+			Discounts newDis= new OverallDiscount(dName,dType,dValue);
+			dList.add(newDis);
+			notify();
+		}
 	}
 	
 	public void removeDiscount(String d, String type)
@@ -51,17 +66,26 @@ public abstract class Discounts {
 			notify();
 		}
 		else {System.out.print("Only admins can add new discounts...");}
-		
-		
 	}
 	
 	public void notif()
 	{
-		//for(int i=0; i<dList.capacity();i++)
-	//	{
-			dViewer.update(dList);
-		//}
-		
+			dViewer.update(dList);	
 	}
+	
+	public Float applyAllDiscounts(Float pAmount)
+	{
+		for(int i=0; i<dList.size();i++)
+		{
+			pAmount= pAmount-(pAmount*(dList.get(i).getDValue()/100));
+			
+		}
+		return pAmount;
+	}
+	
+	abstract boolean checkDiscountValidation(String serviceName);
 
 }
+
+
+

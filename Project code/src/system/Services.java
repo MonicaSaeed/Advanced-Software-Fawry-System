@@ -120,5 +120,10 @@ public abstract class Services{
 	{
 		this.form.setForm();
 	}
+	public String getServiceName()
+	{
+		return this.serviceName;
+	}
 }
+
 
