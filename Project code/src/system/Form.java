@@ -60,6 +60,9 @@ public class Form {
 	}
 	public void setForm()
 	{
-		
+		for(int i=0;i<=numberOfFields ;i++)
+		{
+			this.vec.get(i).setFields();;
+		}
 	}
 }
