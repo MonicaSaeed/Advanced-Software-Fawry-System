@@ -8,6 +8,9 @@ public class CompleteTransaction {
     private float servicePrice;
     public static Vector<CompleteTransaction> completeServices = new Vector<>(); //to save all completed services
 
+	CompleteTransaction(){
+		
+	}
 	CompleteTransaction(String serviceUserName, String serviceName, float servicePrice){
 		this.serviceUserName = serviceUserName;
 		this.serviceName = serviceName;
@@ -16,13 +19,16 @@ public class CompleteTransaction {
 
 
     public String getServiceUserName() {
-		return serviceUserName;
+		return this.serviceUserName;
 	}
 	public String getServiceName() {
-		return serviceName;
+		return this.serviceName;
 	}
 	public float getServicePrice() {
-		return servicePrice;
+		return this.servicePrice;
+	}
+	public Vector<CompleteTransaction> getCompleteServices(){
+		return this.completeServices;
 	}
 
     public void setServiceUserName(String serviceUser) {
