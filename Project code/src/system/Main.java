@@ -51,10 +51,30 @@ public class Main {
 			System.out.print("enter paassword: ");
 			String pass = sc.next();
 			in = F.signIn(name, pass);
+			if(in != "not found"){
+				F.setPassword(pass);
+				F.setUserName(name);
+				for(int i=0;i<F.fawryUsers.size();i++){
+					if(F.fawryUsers.get(i).getUserName().equals(name) && F.fawryUsers.get(i).getPassword().equals(pass)){
+						F.setEmail(F.fawryUsers.get(i).getEmail());
+						F.setUserType(F.fawryUsers.get(i).getUserType());
+					}
+				}
+				
+			}
 		}while(in=="not found");
 		System.out.println("Signed in successfully");
-		
-		
+		System.out.println("");System.out.println("");
+
+		//System.out.println(F.getEmail());
+		//System.out.println(F.getUserName());
+		//System.out.println(F.getPassword());
+		//System.out.println(F.getUserType());
+
+		if(F.getUserType()==true){
+
+		}
+		//F.requestRefund( F, "hsbhh", F.getUserName());
 		
 	}
 
