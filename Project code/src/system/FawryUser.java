@@ -80,7 +80,7 @@ public class FawryUser {
 			}
 		} //System.out.println("Singed in successfully");
 		else{
-			System.out.println("invalid");
+			System.out.println("invalid user name or password");
 			return "not found";
 		} 
 	}

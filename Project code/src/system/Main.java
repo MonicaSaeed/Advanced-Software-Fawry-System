@@ -10,8 +10,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		FawryUser F = new FawryUser();
 		
-		
-		//System.out.println("for sing in enter 1 ,for sign up 2");
+		//must enter 3 users valid to sign up to continue the program to sign in user
 		for(int i=0;i<3;i++) {
 			String up;
 			String username,email,pass;
@@ -43,6 +42,7 @@ public class Main {
 			System.out.println("Signed up successfully");
 		}
 		
+		//sign in user or admin to make the functionality
 		System.out.println("sign in");
 		String in; //string to save if signed in user is user or admin 
 		do {
