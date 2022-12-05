@@ -1,7 +1,7 @@
 package system;
 
 public interface Payment {
-		public float pay();
+		public float pay(float paymentAmount);
 		
 		
 		

@@ -3,8 +3,17 @@ package system;
 import java.util.Scanner;
 
 public abstract class Services{
+	Scanner input= new Scanner(System.in);
+	protected Payment payment;
+	protected boolean payByCash;
+	protected String serviceName;
+	protected Handler handler;
+	protected Form form;
+	protected float paymentAmount;
+
 	
 	final void transaction() {
+		
 		changePaymentMethod();
 		fillForm();
 		sendForm();
@@ -13,28 +22,84 @@ public abstract class Services{
 	public void payByWallet()
 	{
 		Wallet w = null;
-		w.pay();
+		w.pay(paymentAmount);
 	}
 	public void payByCash()
 	{
 		Cash c=null;
-		c.pay();
+		c.pay(paymentAmount);
 	}
-	private boolean changePaymentMethod() {
-		System.out.print("you are using your credit card if you want to pay from wallet press 1, pay cash press 2");
-		int choice;
-		Scanner input= new Scanner(System.in);
-		choice=input.nextInt();
-		if(choice==1)
+	private Payment changePaymentMethod() {
+		CreditCard card = null;
+		 String creditCardNumber, password;
+		 float accountBalance;
+		if(payByCash==true)
 		{
-			payByWallet();
+			System.out.print("you are using your credit card if you want to pay from wallet press 1, pay cash press 2,press 0 to continue using credit card");
+			int choice;
+			
+			choice=input.nextInt();
+			if(choice==1)
+			{	
+				this.payment=new Wallet();
+				payByWallet();
+				return this.payment;
+				
+			}
+			else if(choice==2)
+			{
+				this.payment=new Cash();
+				return this.payment;
+				//payByCash();
+			}
+			else 
+			{
+				this.payment=new CreditCard();
+				System.out.print("enter credit card info");
+				creditCardNumber=input.next();
+				password=input.next();
+				accountBalance=input.nextFloat();
+				for(int i=0;i<card.v1.size();i++)
+				{
+					if(card.v1.get(i).getCRN().equals(creditCardNumber)&&card.v1.get(i).getPassword().equals(password)) {
+						System.out.print("credit card already exist");	
+					}
+					else
+					{card.addCreditCard(creditCardNumber, password, accountBalance);}	
+				}
+				
+				return this.payment;
+			}
 		}
-		else if(choice==2)
-		{
-			payByCash();
+		else {
+			System.out.print("you are using your credit card if you want to pay from wallet press 1,press 0 to continue using credit card");
+			int choice;
+			
+			choice=input.nextInt();
+			if(choice==1)
+			{
+				this.payment=new Wallet();
+				return this.payment;
+				//payByWallet();
+			}
+			else {
+				this.payment=new CreditCard();
+				System.out.print("enter credit card info");
+				creditCardNumber=input.next();
+				password=input.next();
+				accountBalance=input.nextFloat();
+				for(int i=0;i<card.v1.size();i++)
+				{
+					if(card.v1.get(i).getCRN().equals(creditCardNumber)&&card.v1.get(i).getPassword().equals(password)) {
+						System.out.print("credit card already exist");	
+					}
+					else
+					{card.addCreditCard(creditCardNumber, password, accountBalance);}	
+				}
+				return this.payment; 
+			}
+			
 		}
-		return false;
-		
 		// TODO Auto-generated method stub
 	}
 	
@@ -43,46 +108,6 @@ public abstract class Services{
 		// TODO Auto-generated method stub
 		
 	}
-
-	private void sendForm() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void fillForm() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
-	
-	/*public Payment p1;
-	public CreditCard card;
-	public void changePayment()
-	{
-		card.pay();
-		this.p1=new CreditCard();
-		p1.
-		
-		
-	}*/
-	
-	
-	
-	
-	
-	/*public static void main(String[] args)
-	{
-		Payment p1=new CreditCard("2020002", "miretta", 4000,350);
-		System.out.print(p1.pay());
-		
-		
-	}*/
-
-	
-	/* f class services payment p1=new payment
-			 p1.pay(new creditCard("2020002", "miretta", 4000,350))*/
-
-	
-
+	abstract void sendForm();
+	abstract void fillForm();
 }
