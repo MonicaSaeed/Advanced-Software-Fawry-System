@@ -14,14 +14,15 @@ public abstract class Services{
 	//protected SystemServices systemServices;
 	
 		
-	final void makeTransaction() {	
+	final void makeTransaction(String userName) {	
 		sendForm();
 		fillForm();
 		//payment= changePaymentMethod();
 		changePaymentMethod();
 		servicePay(payment);
 		confirm();	
-		
+		CompleteTransaction t= new CompleteTransaction(userName,this.serviceName,this.paymentAmount);
+		t.addCompleteTransaction(t);
 	}
 	
 	
@@ -75,10 +76,10 @@ public abstract class Services{
 	public void servicePay(Payment p)
 	{
 		//String amountValue;
-		for(int i=0;i<Form.vec.size();i++)
+		for(int i=0;i<form.vec.size();i++)
 		{
-			if(Form.vec.get(i).getfieldName().equals("amount"));
-			this.paymentAmount = Float. valueOf(Form.vec.get(i).getText());
+			if(form.vec.get(i).getfieldName().equals("amount"));
+			this.paymentAmount = Float.valueOf(form.vec.get(i).getText());
 		}
 		p.pay(paymentAmount);
 	}

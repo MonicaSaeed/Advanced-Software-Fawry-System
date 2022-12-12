@@ -6,7 +6,7 @@ public class CreditCard implements Payment {
 	private String creditCardNumber;
 	private String password;
 	private float accountBalance;
-	public Vector <CreditCard> v1= new Vector <>();
+	public static Vector <CreditCard> v1= new Vector <>();
 	
 	
 	public CreditCard(String creditCardNumber, String password, float accountBalance)

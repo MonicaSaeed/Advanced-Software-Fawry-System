@@ -119,7 +119,7 @@ public class Main {
 			}
 			else if(choice==2)
 			{
-				monthly.makeTransaction();
+				monthly.makeTransaction(F.getUserName());
 			}
 			else if(choice==3)
 			{

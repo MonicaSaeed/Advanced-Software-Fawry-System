@@ -29,12 +29,12 @@ public class Wallet implements Payment {
 	public void addFunds(CreditCard card,float amountToBeTransfered)
 	{   
 		boolean found=false;
-		CreditCard c = null;
-		for(int i=0;i<c.v1.size();i++)
+		for(int i=0;i<CreditCard.v1.size();i++)
 		{
-			if(c.v1.get(i).getCRN().equals(creditCardNumber)&&c.v1.get(i).getPassword().equals(password)&& c.v1.get(i).getAccountBalance()>=amountToBeTransfered) {
+			if(CreditCard.v1.get(i).getCRN().equals(card.getCRN()) && CreditCard.v1.get(i).getPassword().equals(card.getPassword()) &&
+			CreditCard.v1.get(i).getAccountBalance()>=amountToBeTransfered) {
 				totalFunds+=amountToBeTransfered;
-				c.setAccountBalance(c.getAccountBalance()-amountToBeTransfered);
+				CreditCard.v1.get(i).setAccountBalance(CreditCard.v1.get(i).getAccountBalance()-amountToBeTransfered);
 				found=true;
 				break;
 			}
@@ -42,22 +42,24 @@ public class Wallet implements Payment {
 		}
 		if(found==false)
 		{
-			c.addCreditCard(creditCardNumber, password, accountBalance);
-				if(c.v1.lastElement().getCRN().equals(creditCardNumber)&&c.v1.lastElement().getPassword().equals(password)&& c.v1.lastElement().getAccountBalance()>=amountToBeTransfered) {
+			card.addCreditCard(card.getCRN(), card.getPassword(), card.getAccountBalance());
+				if(CreditCard.v1.lastElement().getCRN().equals(creditCardNumber)&& CreditCard.v1.lastElement().getPassword().equals(password)&& 
+				CreditCard.v1.lastElement().getAccountBalance()>=amountToBeTransfered) {
 				totalFunds+=amountToBeTransfered;
-				c.setAccountBalance(c.getAccountBalance()-amountToBeTransfered);
+				CreditCard.v1.get(CreditCard.v1.size()-1).setAccountBalance(CreditCard.v1.get(CreditCard.v1.size()-1).getAccountBalance()-amountToBeTransfered);
 				}
 		}
-		}	
+	}	
 	@Override
-	public float pay(float paymentAmount) {
+	public float pay(float paymentAmount) 
+	{
 		if(checkBalance(paymentAmount))
 		{
-			paymentAmount-=totalFunds;
+			totalFunds-=paymentAmount;
 		}
 		return totalFunds;
 			
 		// TODO Auto-generated method stub
 		
-}
+	}
 }

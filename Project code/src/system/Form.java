@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class Form {
 	public int numberOfFields ;
-	public static Vector<FormFields> vec = new Vector<>();
+	public Vector<FormFields> vec = new Vector<>();
 	Scanner scanInput = new Scanner(System.in);
 	
 	public void setNumberOfFields(int numberOfFields)
@@ -20,7 +20,7 @@ public class Form {
 
 	public Vector<FormFields> getFormFields()
 	{
-		return Form.vec ;
+		return this.vec ;
 	}
 	// public void setVec(FormFields vec){
 	//	 this.vec= vec;
@@ -43,11 +43,11 @@ public class Form {
 			if (choice==1)
 			{
 				DropDown D =new DropDown(fieldName); 
-				Form.vec.add(D);
+				this.vec.add(D);
 			}
 			else if (choice==2)
 			{
-				Form.vec.add(new Text(fieldName));
+				this.vec.add(new Text(fieldName));
 			}			
 	    }
 	}
@@ -56,7 +56,7 @@ public class Form {
 	{
 		for(int i=0;i<numberOfFields ;i++)
 		{
-			Form.vec.get(i).showFields();
+			this.vec.get(i).showFields();
 		}
 	}
 	
@@ -64,7 +64,7 @@ public class Form {
 	{
 		for(int i=0;i<numberOfFields ;i++)
 		{
-			Form.vec.get(i).setFields();;
+			this.vec.get(i).setFields();;
 		}
 	}
 }
