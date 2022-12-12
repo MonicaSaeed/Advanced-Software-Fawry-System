@@ -17,7 +17,6 @@ public class SpecificDiscount extends Discounts {
 		{
 			return true;
 		}
-		
 		return false;
 	}
 

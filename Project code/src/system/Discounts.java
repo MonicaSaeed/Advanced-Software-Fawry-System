@@ -38,13 +38,13 @@ public abstract class Discounts {
 		{
 			Discounts newDis= new SpecificDiscount(dName,dType,dValue);
 			dList.add(newDis);
-			notify();
+			Dnotify();
 		}
 		else if(dType.equals("OverallDiscount"))
 		{
 			Discounts newDis= new OverallDiscount(dName,dType,dValue);
 			dList.add(newDis);
-			notify();
+			this.Dnotify();
 		}
 	}
 	
@@ -63,14 +63,14 @@ public abstract class Discounts {
 			}
 			
 			dList.remove(index);
-			notify();
+			this.Dnotify();
 		}
 		else {System.out.print("Only admins can add new discounts...");}
 	}
 	
-	public void notif()
+	public void Dnotify()
 	{
-			dViewer.update(dList);	
+		dViewer.update(dList);	
 	}
 	
 	public Float applyAllDiscounts(Float pAmount)

@@ -12,13 +12,15 @@ public class Form {
 	{
 	    this.numberOfFields = numberOfFields ;
 	}
-	 public int getNumberOfFields()
+
+	public int getNumberOfFields()
 	{
-		    return numberOfFields;
+		return numberOfFields;
 	}
+
 	public Vector<FormFields> getFormFields()
 	{
-		 return Form.vec ;
+		return Form.vec ;
 	}
 	// public void setVec(FormFields vec){
 	//	 this.vec= vec;
@@ -27,23 +29,21 @@ public class Form {
 	public Form (int numberOfFields) 
 	{
 	    //Form F= new Form() ;
-
 		for(int i=0;i<numberOfFields ;i++)
 		{  
 			String fieldName;
 			
 			int choice ;
-			System.out.print(" choose field type if \n DropDown-> 1 \n text->2");
+			System.out.print("choose field type if \n DropDown-> 1 \n text->2");
 			choice =scanInput.nextInt();
 
-			System.out.print(" Enter field name :");
+			System.out.print("Enter field name: ");
 			fieldName =scanInput.next();
 			
 			if (choice==1)
 			{
 				DropDown D =new DropDown(fieldName); 
 				Form.vec.add(D);
-
 			}
 			else if (choice==2)
 			{
@@ -51,6 +51,7 @@ public class Form {
 			}			
 	    }
 	}
+
 	public void showForm()
 	{
 		for(int i=0;i<numberOfFields ;i++)
@@ -58,6 +59,7 @@ public class Form {
 			Form.vec.get(i).showFields();
 		}
 	}
+	
 	public void setForm()
 	{
 		for(int i=0;i<numberOfFields ;i++)

@@ -55,19 +55,22 @@ public class DropDown implements FormFields {
 	public void setFields() 
 	{
 		int index;
-		System.out.print("Enter the number of your choice: ");
-		index=scanInput.nextInt();
-		if(index>=stringArray.length)
+		do
 		{
-			return;
-		}
-		this.choosenOption=stringArray[index];
+			System.out.print("Enter the number of your choice: ");
+			index=scanInput.nextInt();
+			if(index>=stringArray.length){
+				System.out.print("Invalid choice.");
+			}
+			
+		}while (index>=stringArray.length);
+
+		this.choosenOption=stringArray[index-1];
 	}
+	
 	@Override
 	public String getText() {
-		// TODO Auto-generated method stub
-		
-		
+		// TODO Auto-generated method stub	
 		return this.choosenOption;
 	}
 	

@@ -21,9 +21,9 @@ public class DiscountViewer {
 	
 	public void update(Vector<Discounts> dlist)
 	{
+		disList.clear();
 		for(int i=0; i<dlist.size();i++)
 		{
-			disList.clear();
 			disList.add( dlist.get(i));
 		}
 //		this.dName=name;
