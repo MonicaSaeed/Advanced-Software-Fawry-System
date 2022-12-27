@@ -13,7 +13,7 @@ import com.Advanced.Software.Fawry.System.FawrySystem.Model.FawryUser;
 @RestController
 
 public class AuthenticationView {
-    Scanner sc = new Scanner(System.in);
+    //Scanner sc = new Scanner(System.in);
     private AuthenticationController AC;
 
     public AuthenticationView(){

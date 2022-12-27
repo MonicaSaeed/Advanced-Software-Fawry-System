@@ -1,7 +1,5 @@
 package com.Advanced.Software.Fawry.System.FawrySystem.Controller;
 
-
-import org.springframework.web.bind.annotation.RequestBody;
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.AuthenticationModel;
 
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.FawryUser;
@@ -30,7 +28,7 @@ public class AuthenticationController {
 	}
 	
 
-	public void setUser(@RequestBody FawryUser fuser){
+	public void setUser( FawryUser fuser){
 		authenticationModel.setFaweryUser(fuser);
 	}
 
