@@ -2,7 +2,15 @@ package com.Advanced.Software.Fawry.System.FawrySystem.View;
 
 import java.util.Scanner;
 
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.Advanced.Software.Fawry.System.FawrySystem.Controller.AuthenticationController;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.FawryUser;
+
+@RestController
 
 public class AuthenticationView {
     Scanner sc = new Scanner(System.in);
@@ -12,42 +20,32 @@ public class AuthenticationView {
         AC=new AuthenticationController();
     }
 
-    public void signIn(){
-        System.out.print("enter name: ");
-        String userName = sc.next();
-        System.out.print("enter paassword: ");
-        String pass = sc.next();
+    @RequestMapping(value="/SignIN",method = RequestMethod.POST)
+    public String signIn(@RequestBody FawryUser fawryuser){
 
-        String SIReturn = AC.signIn(userName, pass);
+        FawryUser fuser = AC.signIn(fawryuser);
+        //String SIReturn = AC.signIn(userName, pass);
 
-        if( SIReturn.equals("not found") ){
-            System.out.println("invalid user name or password");
+        if( fuser==null ){
+            return "invalid user name or password";
         }
         else{
-            System.out.println("Signed in successfully");
+            return "Signed in successfully";
         }
     }
 
 
-    public void signUp(){
-        String username,email,pass;
-        boolean userType;
-        System.out.print("enter user name: ");
-        username = sc.next();
-        System.out.print("enter email: ");
-        email = sc.next();
-        System.out.print("enter password: ");
-        pass = sc.next();
-        System.out.print("enter 1 for admin, 2 for user: ");
-        userType=sc.nextBoolean();
-        String up = AC.signUp(username, email);
+    @RequestMapping(value="/SignUP",method = RequestMethod.POST)
+    public String signUp(@RequestBody FawryUser fuser){
+       
+        String up = AC.signUp(fuser);
 
         if(up.equals("no")){
-            System.out.println("user already exist (name or email)");
+            return "user already exist (name or email)";
         }
         else{
-            System.out.println( AC.setUser(username,pass,email,userType) );
-            System.out.println("Signed up successfully");
+            AC.setUser(fuser);
+            return "Signed up successfully";
         }
     }
 

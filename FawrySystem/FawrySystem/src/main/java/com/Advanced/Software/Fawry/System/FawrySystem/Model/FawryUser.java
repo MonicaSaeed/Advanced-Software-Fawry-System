@@ -10,16 +10,19 @@ public class FawryUser {
     FawryUser(){
 		
 	}
-	public FawryUser(String userNamee){
-		this.userName = userName;
-		
-	}
 	public FawryUser(String userName,String password,String email,boolean userType){
 		this.userName = userName;
 		this.password = password;
 		this.email = email;
 		this. userType = userType;
 	}
+
+	public FawryUser(String userName,String password){
+		this.userName = userName;
+		this.password = password;
+		this.email = "";
+	}
+
 	public String getUserName() {
 		return userName;
 	}
