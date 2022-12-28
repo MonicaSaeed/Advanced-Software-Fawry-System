@@ -2,37 +2,31 @@ package com.Advanced.Software.Fawry.System.FawrySystem.Model;
 
 import java.util.Vector;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+//@AllArgsConstructor
+//@NoArgsConstructor
+
 public class DropDown extends FormFields {
-	public int fieldsInMenue;//number of drop down items
+	public int optionsNo;//number of drop down items
 	public String textInMenue;
-	private Vector<String> stringArray;//array of drop down items
-	public String fieldName;
-	//private String choosenOption;
+	public Vector<String> stringArray;//array of drop down items
 	
 	public DropDown(String fName, int fieldsInMenue,Vector<String> stringArray ) 
 	{
-		this.fieldName=fName;
+		super("dropdown", fName);
+		this.optionsNo=fieldsInMenue;
 		this.stringArray=stringArray;
-		this.fieldType="dropdown";
 
 	} 
 	
-	public DropDown(){this.fieldType="dropdown";} 
+	public DropDown(){super.fieldType="dropdown";} 
+	public DropDown(String fName){super("dropdown",fName);} 
 	
-	@Override
-	public String getfieldName() {
-		// TODO Auto-generated method stub
-		return this.fieldName;
-	}
-	@Override
-	public void setfieldName(String fN) {
-	    this.fieldName = fN;
-	}
-
-	@Override
-	public String getText() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
