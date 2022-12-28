@@ -2,6 +2,10 @@ package system;
 
 import java.util.Vector;
 
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.OverallDiscount;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.SpecificDiscount;
+import com.Advanced.Software.Fawry.System.FawrySystem.View.DiscountViewer;
+
 public abstract class Discounts {
 	protected String dName,dType;
 	protected int dValue;

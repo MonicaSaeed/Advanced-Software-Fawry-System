@@ -1,9 +1,8 @@
-package system;
+package com.Advanced.Software.Fawry.System.FawrySystem.Model;
 
-import java.util.Scanner;
 
 public class OverallDiscount extends Discounts {
-	Scanner input= new Scanner(System.in);
+	//Scanner input= new Scanner(System.in);
 	private int checkValidation;
 	private CompleteTransaction cTrans=null;
 
