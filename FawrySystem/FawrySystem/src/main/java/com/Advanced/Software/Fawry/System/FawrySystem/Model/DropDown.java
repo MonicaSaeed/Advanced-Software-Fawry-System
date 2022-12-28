@@ -2,9 +2,7 @@ package com.Advanced.Software.Fawry.System.FawrySystem.Model;
 
 import java.util.Vector;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
@@ -12,21 +10,42 @@ import lombok.Setter;
 //@AllArgsConstructor
 //@NoArgsConstructor
 
-public class DropDown extends FormFields {
+public class DropDown implements FormFields {
+	protected String fieldType;
+	protected String fieldName;
 	public int optionsNo;//number of drop down items
 	public String textInMenue;
 	public Vector<String> stringArray;//array of drop down items
 	
 	public DropDown(String fName, int fieldsInMenue,Vector<String> stringArray ) 
 	{
-		super("dropdown", fName);
+		this.fieldType="dropdown";
+		this.fieldName= fName;
 		this.optionsNo=fieldsInMenue;
 		this.stringArray=stringArray;
 
 	} 
 	
-	public DropDown(){super.fieldType="dropdown";} 
-	public DropDown(String fName){super("dropdown",fName);} 
-	
+	public DropDown(){
+		this.fieldType="dropdown";
+	} 
 
+	public DropDown(String fName) {
+		this.fieldType="dropdown";
+		this.fieldName= fName;
+	} 
+	public Vector<String> getStringArray() {
+		return this.stringArray;
+	}
+
+
+	@Override
+	public String getFieldType() {
+		return this.fieldType;
+	}
+
+	@Override
+	public String getFieldName() {
+		return this.fieldName;
+	} 
 }

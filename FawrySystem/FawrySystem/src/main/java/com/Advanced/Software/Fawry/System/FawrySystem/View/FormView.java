@@ -1,40 +1,24 @@
 package com.Advanced.Software.Fawry.System.FawrySystem.View;
 
-import java.util.Vector;
-
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.Advanced.Software.Fawry.System.FawrySystem.Controller.FormController;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormFields;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.Form;
 
-import jakarta.websocket.server.PathParam;
 
 public class FormView {
-	
-	//@PostMapping(value="/enterForm")
-	public void enterFormData(@RequestParam int numOfFields)
-	{
-		FormController formCon= new FormController();
-		formCon.creatForm(numOfFields);
-		
+	FormController formCon;
+	FormView(){
+		formCon= new FormController();
 	}
 	
-	@PostMapping(value="/enterForm")
 
-	public String enterFormData(@PathParam(value="fieldsno") int numOfFields,@PathParam(value="formFields") Vector<FormFields> fieldsVec)
+
+	@PostMapping(value="/enterForm")
+	public String enterFormData(@RequestBody Form form)
 	{
-		FormController formCon= new FormController();
-		return formCon.creatForm(numOfFields,fieldsVec);
-		
+		return formCon.creatForm(form);
 	}
-	
-	
-//	public void setFieldData(FormFields f)
-//	{
-//		FormController formCon= new FormController();
-//		formCon.setFieldData(f);
-//		
-//	}
 
 }

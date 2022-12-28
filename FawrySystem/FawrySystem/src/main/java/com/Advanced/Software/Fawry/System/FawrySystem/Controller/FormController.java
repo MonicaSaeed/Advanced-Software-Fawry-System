@@ -18,9 +18,9 @@ public class FormController {
 	{
 		Form newForm=new Form(numOFFields);
 	}
-	public String creatForm(int numOFFields,Vector<FormFields> fieldsVec)
+	public String creatForm(Form form)
 	{
-		Form newForm=new Form(numOFFields,fieldsVec);
+		Form newForm=new Form(form.getNumberOfFields(),form.getVec());
 		return newForm.vec.get(0).getFieldName();
 	}
 
