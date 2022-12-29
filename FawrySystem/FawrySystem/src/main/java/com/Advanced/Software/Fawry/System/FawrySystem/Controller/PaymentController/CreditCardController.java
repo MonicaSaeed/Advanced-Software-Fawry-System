@@ -21,7 +21,7 @@ public class CreditCardController {
 		creditBSL=new CreditCardBSL();
 	}
 	public static class PayCreditCardInfo{
-		public String number;
+		public String cardnumber;
 		public float amount;
 	}
 	
@@ -33,10 +33,10 @@ public class CreditCardController {
 		}*/
 
 	@PostMapping(value = "/CreditCard") 
-	public float makePayment(@RequestBody CreditCardController.PayCreditCardInfo payCredot)
+	public float makePayment(@RequestBody CreditCardController.PayCreditCardInfo payCredit)
 	{
-		System.out.print(payCredot.number+"    "+payCredot.amount);
-		return creditBSL.pay(payCredot.number, payCredot.amount);
+		//System.out.print(payCredit.cardnumber+"    "+payCredit.amount);
+		return creditBSL.pay(payCredit.cardnumber, payCredit.amount);
 	}
 	
 	@RequestMapping(value="/addCard",method = RequestMethod.POST)

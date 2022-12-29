@@ -15,9 +15,9 @@ public class ServicesController {
 		this.serBSL = new ServicesBSL();
 
 	}
-	
-	@PostMapping(value="/creatSystemServices")
-	public boolean createService(@RequestBody boolean value)
+
+	@PostMapping(value="/createSystemServices")
+	public boolean createService()
 	{
 		boolean ret=serBSL.createServices();
 		System.out.print(ServicesBSL.allServices.size());

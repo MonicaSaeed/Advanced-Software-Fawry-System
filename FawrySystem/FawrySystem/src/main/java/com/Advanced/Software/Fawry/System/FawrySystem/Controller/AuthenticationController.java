@@ -3,6 +3,9 @@ package com.Advanced.Software.Fawry.System.FawrySystem.Controller;
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.AuthenticationBSL;
 
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.FawryUser;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +22,7 @@ public class AuthenticationController {
 		authenticationModel = new AuthenticationBSL();
 	}
 	@RequestMapping(value="/SignIN",method = RequestMethod.POST)
-    public String signIn(@RequestBody FawryUser fawryuser){
+    public ResponseEntity<?> signIn(@RequestBody FawryUser fawryuser){
 
         FawryUser fuser = authenticationModel.signIn(fawryuser);
         //String SIReturn = AC.signIn(userName, pass);
@@ -29,8 +32,11 @@ public class AuthenticationController {
         }
         else{
         	
-            return "Signed in successfully";
-        }
+        	return ResponseEntity.ok()
+        	        .header(HttpHeaders.SET_COOKIE, cookies[0].toString())
+        	        .header(HttpHeaders.SET_COOKIE, cookies[1].toString())
+        	        .header(HttpHeaders.SET_COOKIE, cookies[2].toString())
+        	        .header(HttpHeaders.SET_COOKIE, cookies[3].toString()).body("Signed in Successfully");        }
         
     }
 	 @RequestMapping(value="/SignUP",method = RequestMethod.POST)

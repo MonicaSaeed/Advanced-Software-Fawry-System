@@ -13,13 +13,15 @@ public class CreditCardBSL {
 	public static Vector <CreditCard> creditCards= new Vector <>();
 	public String addCreditCard(CreditCard cerditcard) 
 	{
-		/*for(int i=0;i<creditCards.size();i++)
+		for(int i=0;i<creditCards.size();i++)
 		{
-			if(creditCards.get(i).getCRN().equals(cerditcard.getCRN()))
+			/*if(creditCards.get(i).getCRN()==cerditcard.getCRN())
 			{
+				System.out.print(creditCards.get(i).getCRN());
 				return "already exist";
-			}			
-		}*/
+			}*/
+			
+		}
 		creditCards.add(cerditcard);
 		return"added successfully";
 			
@@ -38,9 +40,10 @@ public class CreditCardBSL {
 	public float pay(String cardnumber, float amount) {
 		for(int i=0;i<creditCards.size();i++)
 		{
-			if(creditCards.get(i).getCRN().equals(cardnumber) && creditCards.get(i).getAccountBalance()>=amount)
+			System.out.print(creditCards.get(i).getCRN());
+			if( creditCards.get(i).getAccountBalance()>=amount)
 			{
-				
+				System.out.print(creditCards.get(i).getCRN()+"    "+creditCards.get(i).getAccountBalance());
 				creditCards.get(i).setAccountBalance(creditCards.get(i).getAccountBalance()-amount);
 				return creditCards.get(i).getAccountBalance();
 			

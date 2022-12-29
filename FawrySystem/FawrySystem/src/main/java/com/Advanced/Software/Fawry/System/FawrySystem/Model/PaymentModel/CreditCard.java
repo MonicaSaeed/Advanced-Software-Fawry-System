@@ -14,9 +14,9 @@ public class CreditCard {
 		this.accountBalance=accountBalance;	
 	}
 	//public CreditCard() {}
-	public String getCRN() {return  creditCardNumber;}
-	public String getPassword() {return password;}
 	
+	public String getPassword() {return password;}
+	public String getCRN() {return  creditCardNumber;}
 	public float getAccountBalance() {return accountBalance;}
 	public void setAccountBalance(float accountBalance ) {this.accountBalance=accountBalance;}
 }

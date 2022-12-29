@@ -10,6 +10,11 @@ import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSL.
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSL.WalletBSL;
 @RestController
 public class WalletController {
+	
+	public static class PayWalletInfo{
+        public String number;
+        public float amountToBeTransfered;
+    }
 	private WalletBSL walletBSL;
 	
 	public WalletController()
