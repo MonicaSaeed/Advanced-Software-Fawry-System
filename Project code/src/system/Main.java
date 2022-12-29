@@ -3,7 +3,6 @@ package system;
 
 import java.util.Scanner;
 
-import com.Advanced.Software.Fawry.System.FawrySystem.View.DiscountViewer;
 
 public class Main {
 

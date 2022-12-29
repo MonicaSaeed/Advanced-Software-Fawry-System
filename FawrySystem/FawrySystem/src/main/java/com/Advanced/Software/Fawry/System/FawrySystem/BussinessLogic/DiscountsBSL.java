@@ -63,11 +63,11 @@ public class DiscountsBSL {
 	{
 		return dList.get(position);
 	}
-	/*public void Dnotify()
+	public void Dnotify()
 	{
 		dViewer.update(dList);	
 	}
-	
+	/*
 	public Float applyAllDiscounts(Float pAmount)
 	{
 		for(int i=0; i<dList.size();i++)
