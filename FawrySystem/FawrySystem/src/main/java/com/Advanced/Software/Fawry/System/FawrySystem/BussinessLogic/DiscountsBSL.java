@@ -4,10 +4,10 @@ import java.util.Vector;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import com.Advanced.Software.Fawry.System.FawrySystem.Controller.DiscountViewer;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Discounts;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.OverallDiscount;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.SpecificDiscount;
-import com.Advanced.Software.Fawry.System.FawrySystem.View.DiscountViewer;
 @Component
 @Service
 
@@ -30,7 +30,7 @@ public class DiscountsBSL {
 		{
 			Discounts newDis= new SpecificDiscount(dName, dType,dValue);
 			dList.add(newDis);
-			System.out.print(dList.get(0).getDName());
+			//System.out.print(dList.get(0).getDName());
 			return "discount added successfully";
 
 			//Dnotify();
@@ -39,7 +39,7 @@ public class DiscountsBSL {
 		{
 			Discounts newDis= new OverallDiscount(dName, dType,dValue);
 			dList.add(newDis);
-			System.out.print(dList.get(0).getDName()+dList.get(1).getDName());
+			//System.out.print(dList.get(0).getDName()+dList.get(1).getDName());
 			//this.Dnotify();
 			return "discount added successfully";
 
@@ -47,28 +47,23 @@ public class DiscountsBSL {
 		}
 		return "not allowed";
 	}
-	
-	/*public void removeDiscount(Discounts discount,FawryUser user)
+	public String printAllDiscounts()
 	{
-		if(checkUserType(user))
+		String disc="";
+		for(int i=0;i<dList.size();i++)
 		{
-			int index=0;
-			for(int i=0; i<dList.size();i++)
-			{
-				if(dList.get(i).getDName().equals(discount.getDName()))
-				{
-					index=i;
-					break;
-				}
-			}
-			
-			dList.remove(index);
-			this.Dnotify();
+			disc+=" Discount name: "+dList.get(i).getDName()+" Discount type: "+dList.get(i).getDType()+" Discount value: "+dList.get(i).getDValue()+"%\n";
+
+			//System.out.print("Discount name	"+bsl.dList.get(i).getDName()+"\nDiscount type: "+bsl.dList.get(i).getDType()+"\nDiscount value: "+bsl.dList.get(i).getDValue()+"%\n");
+
 		}
-		else {System.out.print("Only admins can add new discounts...");}
+		return disc;
 	}
-	*/
-	public void Dnotify()
+	public Discounts viewDiscounts(int position)
+	{
+		return dList.get(position);
+	}
+	/*public void Dnotify()
 	{
 		dViewer.update(dList);	
 	}
@@ -81,7 +76,7 @@ public class DiscountsBSL {
 			
 		}
 		return pAmount;
-	}
+	}*/
 	
 	//abstract boolean checkDiscountValidation(String serviceName);
 }
