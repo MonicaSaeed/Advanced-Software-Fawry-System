@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.CreditCard;
-@Component
+
 @Service
 
 public class CreditCardBSL {
@@ -15,16 +15,14 @@ public class CreditCardBSL {
 	{
 		for(int i=0;i<creditCards.size();i++)
 		{
-			/*if(creditCards.get(i).getCRN()==cerditcard.getCRN())
+			if(creditCards.get(i).getcreditCardNum().equals(cerditcard.getcreditCardNum()))
 			{
-				System.out.print(creditCards.get(i).getCRN());
+				System.out.print(creditCards.get(i).getcreditCardNum());
 				return "already exist";
-			}*/
-			
+			}	
 		}
 		creditCards.add(cerditcard);
-		return"added successfully";
-			
+		return"added successfully";	
 	}
 	/*public boolean validCard(CreditCard cerditcard)
 	{
@@ -37,14 +35,14 @@ public class CreditCardBSL {
 		}
 		return false; 
 	}*/
+	
 	public float pay(String cardnumber, float amount) {
 		for(int i=0;i<creditCards.size();i++)
 		{
-			System.out.print(creditCards.get(i).getCRN());
-			if( creditCards.get(i).getAccountBalance()>=amount)
+			if(creditCards.get(i).getcreditCardNum().equals(cardnumber)&&creditCards.get(i).getAccountBalance()>=amount)
 			{
-				System.out.print(creditCards.get(i).getCRN()+"    "+creditCards.get(i).getAccountBalance());
 				creditCards.get(i).setAccountBalance(creditCards.get(i).getAccountBalance()-amount);
+				//System.out.print(creditCards.get(i).getcreditCardNum()+" "+creditCards.get(i).getAccountBalance()+" "+creditCards.get(i).getPassword()+"\n");
 				return creditCards.get(i).getAccountBalance();
 			
 			}	

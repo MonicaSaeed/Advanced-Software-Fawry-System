@@ -35,7 +35,7 @@ public class CreditCardController {
 	@PostMapping(value = "/CreditCard") 
 	public float makePayment(@RequestBody CreditCardController.PayCreditCardInfo payCredit)
 	{
-		//System.out.print(payCredit.cardnumber+"    "+payCredit.amount);
+		//System.out.print("blllaa"+payCredit.cardnumber+" "+payCredit.amount);
 		return creditBSL.pay(payCredit.cardnumber, payCredit.amount);
 	}
 	

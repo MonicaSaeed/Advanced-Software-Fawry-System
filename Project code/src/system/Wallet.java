@@ -50,7 +50,6 @@ public class Wallet implements Payment {
 				}
 		}
 	}	
-	@Override
 	public float pay(float paymentAmount) 
 	{
 		if(checkBalance(paymentAmount))

@@ -1,5 +1,4 @@
 package com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel;
-
 public class Wallet{
 	 private float totalFunds;  //el wallet already fiha kam
 	 float paymentAmount;

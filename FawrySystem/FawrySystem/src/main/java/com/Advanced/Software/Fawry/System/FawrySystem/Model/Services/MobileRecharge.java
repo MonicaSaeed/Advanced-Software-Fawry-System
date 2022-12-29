@@ -20,7 +20,6 @@ public class MobileRecharge extends SystemService{
 		this.serviceName="Mobile Recharge service";
 		
 		Vector<FormFields> fields= new Vector<>();
-//		
 		FormFields text1=new Text("amount");
 		fields.add(text1);
 		FormFields text2=new Text("mobileNumber");
