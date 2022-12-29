@@ -1,13 +1,13 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic;
+package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSL;
 
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.Wallet;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.Wallet;
 @Component
 @Service
 public class WalletBSL {
-		Wallet wallet;
+	Wallet wallet;
 	public boolean checkBalance(float paymentAmount ) {
 		
 		if(wallet.getTotalFund()<paymentAmount)

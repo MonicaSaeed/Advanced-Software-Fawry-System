@@ -1,4 +1,4 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.Controller;
+package com.Advanced.Software.Fawry.System.FawrySystem.Controller.PaymentController;
 
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.CreditCardBSL;
-//import com.Advanced.Software.Fawry.System.FawrySystem.Model.AmountToPay;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.CreditCard;
+import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSL.CreditCardBSL;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.CreditCard;
 
 @RestController
 public class CreditCardController {
@@ -24,14 +23,8 @@ public class CreditCardController {
 	public static class PayCreditCardInfo{
 		public String number;
 		public float amount;
-//		public PayCreditCardInfo() {}
-//		public PayCreditCardInfo(String number,float amount)
-//		{
-//			this.number=number;
-//			this.amount=amount;
-//		}
-		
 	}
+	
 	//@RequestParam(defaultValue = "empty") String name, @RequestParam(defaultValue = "empty"
 	
 		/*@RequestMapping(path = "/mno/objectKey/{id}/{name}", method = RequestMethod.GET)

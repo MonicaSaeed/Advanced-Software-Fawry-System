@@ -1,6 +1,4 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.Model;
-
-
+package com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel;
 
 public class Wallet{
 	 private float totalFunds;  //el wallet already fiha kam
@@ -8,14 +6,14 @@ public class Wallet{
 	 String creditCardNumber,password;
 	 float accountBalance;
 	
+	public Wallet() {
+	}
 	public Wallet(float totalFunds, float paymentAmount)
 	{
 		this.totalFunds=totalFunds;
 		this.paymentAmount=paymentAmount;
 	}
-	public Wallet() {
-		// TODO Auto-generated constructor stub
-	}
+	
 	public float getTotalFund()
 	{
 		return totalFunds;

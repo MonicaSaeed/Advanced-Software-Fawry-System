@@ -1,11 +1,11 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic;
+package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSL;
 
 import java.util.Vector;
 
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.CreditCard;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.CreditCard;
 @Component
 @Service
 
