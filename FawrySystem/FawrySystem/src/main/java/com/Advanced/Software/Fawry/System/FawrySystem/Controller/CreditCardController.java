@@ -7,14 +7,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.CreditCardBSL;
 //import com.Advanced.Software.Fawry.System.FawrySystem.Model.AmountToPay;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.CreditCard;
 
-@Component
-@Service
-
+@RestController
 public class CreditCardController {
 	CreditCardBSL creditBSL;
 	

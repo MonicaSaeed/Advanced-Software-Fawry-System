@@ -1,10 +1,16 @@
 package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic;
 import java.util.Vector;
+
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Discounts;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.FawryUser;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.OverallDiscount;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.SpecificDiscount;
 import com.Advanced.Software.Fawry.System.FawrySystem.View.DiscountViewer;
+@Component
+@Service
 
 public class DiscountsBSL {
 	
