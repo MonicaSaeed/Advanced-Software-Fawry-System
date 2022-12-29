@@ -14,6 +14,7 @@ public class DiscountsBSL {
 	{
 		return user.getUserType();
 	}
+
 	public void addDiscount(Discounts discount,FawryUser user)
 	{
 		
@@ -70,7 +71,4 @@ public class DiscountsBSL {
 	}
 	
 	//abstract boolean checkDiscountValidation(String serviceName);
-
-	
-
 }

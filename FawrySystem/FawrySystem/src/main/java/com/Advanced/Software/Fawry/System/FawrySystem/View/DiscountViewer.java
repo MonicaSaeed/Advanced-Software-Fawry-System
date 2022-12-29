@@ -18,7 +18,6 @@ public class DiscountViewer {
 			System.out.print("Discount name	"+disList.get(i).getDName()+"\nDiscount type: "+disList.get(i).getDType()+"\nDiscount value: "+disList.get(i).getDValue()+"%\n");
 
 		}
-		
 	}
 	
 	public void update(Vector<Discounts> dlist)

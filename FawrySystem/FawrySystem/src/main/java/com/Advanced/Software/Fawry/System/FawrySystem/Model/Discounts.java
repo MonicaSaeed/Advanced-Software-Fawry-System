@@ -1,7 +1,6 @@
 package com.Advanced.Software.Fawry.System.FawrySystem.Model;
 
 import java.util.Vector;
-
 import com.Advanced.Software.Fawry.System.FawrySystem.View.DiscountViewer;
 
 public abstract class Discounts {
