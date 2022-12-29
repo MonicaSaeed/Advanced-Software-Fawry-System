@@ -5,13 +5,13 @@ import java.util.Vector;
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.HandlerBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Form;
 
-public abstract class Service {
+public abstract class SystemService {
 	protected boolean payByCash;
 	protected String serviceName;
 	protected HandlerBSL handler;
 	protected Form form;
 	
-	public Service(boolean cash)
+	public SystemService(boolean cash)
 	{
 		this.payByCash=cash;
 	}

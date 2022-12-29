@@ -7,7 +7,7 @@ import com.Advanced.Software.Fawry.System.FawrySystem.Model.Form;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormFields;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Text;
 
-public class Donations extends Service{
+public class Donations extends SystemService{
 	protected boolean payByCash;
 	protected String serviceName;
 	protected HandlerBSL handler;

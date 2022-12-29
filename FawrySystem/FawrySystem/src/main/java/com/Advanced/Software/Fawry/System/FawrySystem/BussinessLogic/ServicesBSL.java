@@ -2,23 +2,27 @@ package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic;
 
 import java.util.Vector;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Services.Donations;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Services.InternetPayment;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Services.Landline;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Services.MobileRecharge;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.Services.Service;
-
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.Services.SystemService;
+@Component
+@Service
 public  class ServicesBSL {
-	public static Vector<Service> allServices = new Vector<>();
+	public static Vector<SystemService> allServices = new Vector<>();
 	
-	public  Vector<Service> mobileRechargeVec = new Vector<>();
-	public  Vector<Service> landlineVec = new Vector<>();
-	public  Vector<Service> internetPaymentVec = new Vector<>();
-	public  Vector<Service> donationsVec = new Vector<>();
+	public  Vector<SystemService> mobileRechargeVec = new Vector<>();
+	public  Vector<SystemService> landlineVec = new Vector<>();
+	public  Vector<SystemService> internetPaymentVec = new Vector<>();
+	public  Vector<SystemService> donationsVec = new Vector<>();
 	
 	
 	//private Services cTrans=null;
-	public Vector<Service> searchForService(int serviceName)
+	public Vector<SystemService> searchForService(int serviceName)
 	{
 		if(serviceName==1) {
 			for(int i=0;i< allServices.size();i++)

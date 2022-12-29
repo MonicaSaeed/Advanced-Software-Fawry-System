@@ -8,7 +8,7 @@ import com.Advanced.Software.Fawry.System.FawrySystem.Model.Form;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormFields;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Text;
 
-public class InternetPayment extends Service{
+public class InternetPayment extends SystemService{
 	
 	protected boolean payByCash;
 	protected String serviceName;

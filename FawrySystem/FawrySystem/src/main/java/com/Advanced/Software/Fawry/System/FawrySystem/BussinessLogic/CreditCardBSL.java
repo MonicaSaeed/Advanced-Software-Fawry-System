@@ -2,8 +2,12 @@ package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic;
 
 import java.util.Vector;
 
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.CreditCard;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.CreditCard;
+@Component
+@Service
 
 public class CreditCardBSL {
 	public static Vector <CreditCard> creditCards= new Vector <>();

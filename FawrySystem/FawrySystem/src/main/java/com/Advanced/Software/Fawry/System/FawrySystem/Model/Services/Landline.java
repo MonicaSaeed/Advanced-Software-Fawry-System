@@ -7,7 +7,7 @@ import com.Advanced.Software.Fawry.System.FawrySystem.Model.Form;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormFields;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Text;
 
-public class Landline extends Service{
+public class Landline extends SystemService{
 		protected boolean payByCash;
 		protected String serviceName;
 		protected HandlerBSL handler;
