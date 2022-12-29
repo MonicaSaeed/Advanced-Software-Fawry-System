@@ -11,35 +11,29 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class Form {
-	public int numberOfFields ;
-	public Vector<FormFields> vec ;//= new Vector<>();
+	private int numberOfFields ;
+	private Vector<FormFields> vec ;//= new Vector<>();
 	
-	public Form(int numberOfFields)
-	{
-		this.numberOfFields=numberOfFields;
-	}
+//	public Form(int numberOfFields)
+//	{
+//		this.numberOfFields=numberOfFields;
+//	}
 	
 	public Form(int numberOfFields,Vector<FormFields> vec)
 	{
 		this.numberOfFields=numberOfFields;
 		this.vec=vec;
-		for(int i=0;i<vec.size();i++)
-		{
-			if(vec.get(i).getFieldType().equals("text"))
-			{
-				Text newField= new Text(vec.get(i).getFieldName());
-				vec.set(i,newField);
-			}
-			else if(vec.get(i).getFieldType().equals("dropdown"))
-			{
-				DropDown newField= new DropDown(vec.get(i).getFieldName());
-				vec.set(i,newField);
-			}
-		}
 	}
 	
 	
-
+	public int getNumberOfFields()
+	{
+		return this.numberOfFields;
+	}
+	public Vector<FormFields> getVec()
+	{
+		return this.vec;
+	}
 	
 
 }

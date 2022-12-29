@@ -28,5 +28,13 @@ public class Text implements FormFields {
     public String getFieldName() {
         return this.fieldName;
     }
+	@Override
+	public void setField(String text) {
+		this.text=text;
+	}
+	@Override
+	public String getFinalValue() {
+		return this.text;
+	}
 	
 }

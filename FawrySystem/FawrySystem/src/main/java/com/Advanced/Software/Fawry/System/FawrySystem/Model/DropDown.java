@@ -13,15 +13,24 @@ import lombok.Setter;
 public class DropDown implements FormFields {
 	protected String fieldType;
 	protected String fieldName;
-	public int optionsNo;//number of drop down items
-	public String textInMenue;
-	public Vector<String> stringArray;//array of drop down items
+	private int optionsNo;//number of drop down items
+	private Vector<String> stringArray;//array of drop down items
+	private String choice;
+	
 	
 	public DropDown(String fName, int fieldsInMenue,Vector<String> stringArray ) 
 	{
 		this.fieldType="dropdown";
 		this.fieldName= fName;
 		this.optionsNo=fieldsInMenue;
+		this.stringArray=stringArray;
+
+	} 
+	
+	public DropDown(String fName,Vector<String> stringArray ) 
+	{
+		this.fieldType="dropdown";
+		this.fieldName= fName;
 		this.stringArray=stringArray;
 
 	} 
@@ -47,5 +56,16 @@ public class DropDown implements FormFields {
 	@Override
 	public String getFieldName() {
 		return this.fieldName;
+	}
+
+	@Override
+	public void setField(String text) {
+		int indx=Integer.parseInt(text);
+		this.choice=stringArray.get(indx-1);
+	}
+
+	@Override
+	public String getFinalValue() {
+		return this.choice;
 	} 
 }
