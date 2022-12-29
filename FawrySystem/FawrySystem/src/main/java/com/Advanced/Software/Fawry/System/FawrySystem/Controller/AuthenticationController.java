@@ -1,6 +1,6 @@
 package com.Advanced.Software.Fawry.System.FawrySystem.Controller;
 
-import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.AuthenticationModel;
+import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.AuthenticationBSL;
 
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.FawryUser;
 import org.springframework.stereotype.Component;
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AuthenticationController {
-    private AuthenticationModel authenticationModel;
+    private AuthenticationBSL authenticationModel;
 	
 
 	public AuthenticationController(){
-		authenticationModel = new AuthenticationModel();
+		authenticationModel = new AuthenticationBSL();
 	}
 	@RequestMapping(value="/SignIN",method = RequestMethod.POST)
     public String signIn(@RequestBody FawryUser fawryuser){
@@ -25,7 +25,7 @@ public class AuthenticationController {
         //String SIReturn = AC.signIn(userName, pass);
 
         if( fuser==null ){
-            return "invalid user name or password";
+            return "invalid email or password";
         }
         else{
         	

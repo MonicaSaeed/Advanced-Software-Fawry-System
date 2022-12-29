@@ -1,4 +1,4 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.Controller;
+package com.Advanced.Software.Fawry.System.FawrySystem.Controller.DiscountController;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

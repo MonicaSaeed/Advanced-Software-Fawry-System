@@ -1,11 +1,11 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.Controller;
+package com.Advanced.Software.Fawry.System.FawrySystem.Controller.DiscountController;
 
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.DiscountsBSL;
-import com.Advanced.Software.Fawry.System.FawrySystem.Controller.DiscountsController.DiscountInfo;
+import com.Advanced.Software.Fawry.System.FawrySystem.Controller.DiscountController.DiscountsController.DiscountInfo;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Discounts;
 
 @RestController

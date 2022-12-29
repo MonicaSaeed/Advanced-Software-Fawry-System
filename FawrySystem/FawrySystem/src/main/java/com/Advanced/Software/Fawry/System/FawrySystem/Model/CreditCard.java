@@ -10,7 +10,7 @@ public class CreditCard {
 		this.password=password;
 		this.accountBalance=accountBalance;	
 	}
-	public CreditCard() {}
+	//public CreditCard() {}
 	public String getCRN() {return  creditCardNumber;}
 	public String getPassword() {return password;}
 	

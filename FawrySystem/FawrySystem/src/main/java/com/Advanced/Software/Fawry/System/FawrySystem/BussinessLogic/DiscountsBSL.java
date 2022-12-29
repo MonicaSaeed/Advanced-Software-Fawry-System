@@ -4,7 +4,7 @@ import java.util.Vector;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.Advanced.Software.Fawry.System.FawrySystem.Controller.DiscountViewer;
+import com.Advanced.Software.Fawry.System.FawrySystem.Controller.DiscountController.DiscountViewer;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Discounts;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.OverallDiscount;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.SpecificDiscount;
@@ -63,10 +63,10 @@ public class DiscountsBSL {
 	{
 		return dList.get(position);
 	}
-	public void Dnotify()
+	/*public void Dnotify()
 	{
 		dViewer.update(dList);	
-	}
+	}*/
 	/*
 	public Float applyAllDiscounts(Float pAmount)
 	{

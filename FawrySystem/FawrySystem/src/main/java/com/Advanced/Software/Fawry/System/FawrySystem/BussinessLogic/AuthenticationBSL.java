@@ -9,7 +9,7 @@ import com.Advanced.Software.Fawry.System.FawrySystem.Model.FawryUser;
 
 @Component
 @Service
-public class AuthenticationModel{
+public class AuthenticationBSL{
     public static Vector<FawryUser> fawryUsers = new Vector<>(); //to save all users' data
 
     public void setFaweryUser(FawryUser fuser){
@@ -39,7 +39,7 @@ public class AuthenticationModel{
 
 		for(int i=0;i<fawryUsers.size();i++){
             FawryUser fuser = fawryUsers.get(i);            
-            if(fawryuser.getUserName().equals(fuser.getUserName())  && fawryuser.getPassword().equals(fuser.getPassword()) ){
+            if(fawryuser.getEmail().equals(fuser.getEmail())  && fawryuser.getPassword().equals(fuser.getPassword()) ){
 				return fuser;
             }
         }
