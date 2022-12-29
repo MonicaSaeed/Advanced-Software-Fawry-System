@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Discounts;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.FawryUser;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.OverallDiscount;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.SpecificDiscount;
 import com.Advanced.Software.Fawry.System.FawrySystem.View.DiscountViewer;
@@ -16,32 +15,40 @@ public class DiscountsBSL {
 	
 	public static Vector<Discounts> dList= new Vector<Discounts>();
 	protected DiscountViewer dViewer;
-	public boolean checkUserType(FawryUser user )
+	/*public boolean (FawryUser user )
 	{
 		return user.getUserType();
-	}
-
-	public void addDiscount(Discounts discount,FawryUser user)
+	}*/
+	
+	public String addDiscount(String dName,String dType,int dValue)
 	{
+		boolean user=true;
 		
-		if(checkUserType(user))
+		if(user)
 		{
-		if(discount.getDType().equals("SpecificDiscount"))
+		if( dType.equals("SpecificDiscount"))
 		{
-			Discounts newDis= new SpecificDiscount(discount.getDName(),discount.getDType(),discount.getDValue());
+			Discounts newDis= new SpecificDiscount(dName, dType,dValue);
 			dList.add(newDis);
-			Dnotify();
+			System.out.print(dList.get(0).getDName());
+			return "discount added successfully";
+
+			//Dnotify();
 		}
-		else if(discount.getDType().equals("OverallDiscount"))
+		else if( dType.equals("OverallDiscount"))
 		{
-			Discounts newDis= new OverallDiscount(discount.getDName(),discount.getDType(),discount.getDValue());
+			Discounts newDis= new OverallDiscount(dName, dType,dValue);
 			dList.add(newDis);
-			this.Dnotify();
+			System.out.print(dList.get(0).getDName()+dList.get(1).getDName());
+			//this.Dnotify();
+			return "discount added successfully";
+
 		}
 		}
+		return "not allowed";
 	}
 	
-	public void removeDiscount(Discounts discount,FawryUser user)
+	/*public void removeDiscount(Discounts discount,FawryUser user)
 	{
 		if(checkUserType(user))
 		{
@@ -60,7 +67,7 @@ public class DiscountsBSL {
 		}
 		else {System.out.print("Only admins can add new discounts...");}
 	}
-	
+	*/
 	public void Dnotify()
 	{
 		dViewer.update(dList);	

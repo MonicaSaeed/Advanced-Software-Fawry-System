@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 public class AuthenticationController {
     private AuthenticationModel authenticationModel;
@@ -29,6 +28,7 @@ public class AuthenticationController {
             return "invalid user name or password";
         }
         else{
+        	
             return "Signed in successfully";
         }
         
@@ -50,6 +50,8 @@ public class AuthenticationController {
 	public void setUser( FawryUser fuser){
 		authenticationModel.setFaweryUser(fuser);
 	}
+	
+	
 
 
 }
