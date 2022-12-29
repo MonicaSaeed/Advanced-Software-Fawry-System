@@ -7,7 +7,6 @@ public class AmountToPay {
 	private float accountBalance;
 	private float amountToPay;
 	public AmountToPay(String creditCardNumber, String password, float accountBalance,float amountToPay)
-	
 	{
 		this.creditCardNumber=creditCardNumber;
 		this.password=password;

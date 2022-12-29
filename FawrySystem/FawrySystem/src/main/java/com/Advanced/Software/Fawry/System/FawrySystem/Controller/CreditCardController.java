@@ -19,22 +19,27 @@ public class CreditCardController {
 	
 	public CreditCardController() {
 		creditBSL=new CreditCardBSL();
-		}
+	}
+	public static class PayCreditCardInfo{
+		public String number;
+		public float amount;
+	}
 	//@RequestParam(defaultValue = "empty") String name, @RequestParam(defaultValue = "empty"
 	
 		/*@RequestMapping(path = "/mno/objectKey/{id}/{name}", method = RequestMethod.GET)
 		public Book getBook(@PathVariable int id, @PathVariable String name) {
 		    // code here
 		}*/
-		@GetMapping(value = "/CreditCard/{number}/{amount}")
-		public float makePayment(@PathVariable String number,@PathVariable float amount)
-		{
-			return creditBSL.pay(number, amount);
-		}
-		
-		 @RequestMapping(value="/addCard",method = RequestMethod.POST)
-		public String addCard(@RequestBody CreditCard card)
-		{
-			return creditBSL.addCreditCard(card);
-		}
+
+	@RequestMapping(value = "/CreditCard",method = RequestMethod.POST) 
+	public float makePayment(PayCreditCardInfo payCredot)
+	{
+		return creditBSL.pay(payCredot.number, payCredot.amount);
+	}
+	
+	@RequestMapping(value="/addCard",method = RequestMethod.POST)
+	public String addCard(@RequestBody CreditCard card)
+	{
+		return creditBSL.addCreditCard(card);
+	}
 }

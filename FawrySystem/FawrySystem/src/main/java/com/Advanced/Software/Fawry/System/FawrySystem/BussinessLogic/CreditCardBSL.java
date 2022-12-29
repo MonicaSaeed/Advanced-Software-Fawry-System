@@ -6,7 +6,7 @@ import com.Advanced.Software.Fawry.System.FawrySystem.Model.CreditCard;
 
 
 public class CreditCardBSL {
-	public final Vector <CreditCard> creditCards= new Vector <>();
+	public static Vector <CreditCard> creditCards= new Vector <>();
 	public String addCreditCard(CreditCard cerditcard) 
 	{
 		/*for(int i=0;i<creditCards.size();i++)
