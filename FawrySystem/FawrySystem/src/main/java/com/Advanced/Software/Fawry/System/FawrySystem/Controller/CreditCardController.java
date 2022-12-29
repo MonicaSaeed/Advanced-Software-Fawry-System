@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +24,13 @@ public class CreditCardController {
 	public static class PayCreditCardInfo{
 		public String number;
 		public float amount;
+//		public PayCreditCardInfo() {}
+//		public PayCreditCardInfo(String number,float amount)
+//		{
+//			this.number=number;
+//			this.amount=amount;
+//		}
+		
 	}
 	//@RequestParam(defaultValue = "empty") String name, @RequestParam(defaultValue = "empty"
 	
@@ -31,9 +39,10 @@ public class CreditCardController {
 		    // code here
 		}*/
 
-	@RequestMapping(value = "/CreditCard",method = RequestMethod.POST) 
-	public float makePayment(PayCreditCardInfo payCredot)
+	@PostMapping(value = "/CreditCard") 
+	public float makePayment(@RequestBody CreditCardController.PayCreditCardInfo payCredot)
 	{
+		System.out.print(payCredot.number+"    "+payCredot.amount);
 		return creditBSL.pay(payCredot.number, payCredot.amount);
 	}
 	

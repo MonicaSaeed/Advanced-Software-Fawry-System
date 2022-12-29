@@ -1,16 +1,17 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.Model;
+package com.Advanced.Software.Fawry.System.FawrySystem.Model.Services;
 
 import java.util.Vector;
 
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.HandlerBSL;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.Form;
 
-public abstract class Services {
+public abstract class Service {
 	protected boolean payByCash;
 	protected String serviceName;
 	protected HandlerBSL handler;
 	protected Form form;
 	
-	public Services(boolean cash)
+	public Service(boolean cash)
 	{
 		this.payByCash=cash;
 	}

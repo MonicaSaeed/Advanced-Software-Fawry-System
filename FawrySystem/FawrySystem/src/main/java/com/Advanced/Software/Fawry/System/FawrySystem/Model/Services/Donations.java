@@ -1,10 +1,13 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.Model;
+package com.Advanced.Software.Fawry.System.FawrySystem.Model.Services;
 
 import java.util.Vector;
 
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.HandlerBSL;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.Form;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormFields;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.Text;
 
-public class Donations extends Services{
+public class Donations extends Service{
 	protected boolean payByCash;
 	protected String serviceName;
 	protected HandlerBSL handler;
