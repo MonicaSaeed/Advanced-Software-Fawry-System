@@ -14,11 +14,11 @@ public class FormController {
 //			
 //		}
 //	}
-	public void creatForm(int numOFFields)
+	public void createForm(int numOFFields)
 	{
 		Form newForm=new Form(numOFFields);
 	}
-	public String creatForm(Form form)
+	public String createForm(Form form)
 	{
 		Form newForm=new Form(form.getNumberOfFields(),form.getVec());
 		return newForm.vec.get(0).getFieldName();

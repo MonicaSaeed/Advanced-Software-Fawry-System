@@ -18,7 +18,7 @@ public class FormView {
 	@PostMapping(value="/enterForm")
 	public String enterFormData(@RequestBody Form form)
 	{
-		return formCon.creatForm(form);
+		return formCon.createForm(form);
 	}
 
 }
