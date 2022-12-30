@@ -12,6 +12,9 @@ public class PaymentTransaction extends Transaction{
 		super. transPrice=transPrice;
 		super. transStatus=transStatus;	
 	}
+	public PaymentTransaction() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getPaymentMethod() {return paymentMethod;}
 	public String getserviceName() {return serviceName;}
 
