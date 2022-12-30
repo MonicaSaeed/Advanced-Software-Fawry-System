@@ -2,8 +2,6 @@ package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.Transactio
 
 import java.util.Vector;
 
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions.PaymentTransaction;
-
 
 public class RefundTransactionBSL {
 	
@@ -15,6 +13,6 @@ public class RefundTransactionBSL {
 	}
 	public Vector<RefundTransactionBSL> printvector()
 	{
-		return refund;
+		return RefundTransactionBSL.refund;
 	}
 }

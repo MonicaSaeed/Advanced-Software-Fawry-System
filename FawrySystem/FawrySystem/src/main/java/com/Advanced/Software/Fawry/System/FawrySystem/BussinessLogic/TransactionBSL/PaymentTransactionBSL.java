@@ -2,7 +2,6 @@ package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.Transactio
 
 import java.util.Vector;
 
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions.AddToWalletTransaction;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions.PaymentTransaction;
 
 public class PaymentTransactionBSL {
@@ -14,7 +13,7 @@ public class PaymentTransactionBSL {
 		payment.add(paymentTrans);
 	}
 	public Vector<PaymentTransaction> printVector(){
-		return payment;
+		return PaymentTransactionBSL.payment;
 	}
 
 }

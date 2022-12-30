@@ -12,7 +12,7 @@ public class AddToWalletTransactionBSL {
 		
 	}
 	public Vector<AddToWalletTransaction> printVector(){
-		return this.wallet;
+		return AddToWalletTransactionBSL.wallet;
 	}
 
 }

@@ -44,22 +44,24 @@ public class AuthenticationController {
         	        .header(HttpHeaders.SET_COOKIE, cookies.get(1).toString())
         	        .header(HttpHeaders.SET_COOKIE, cookies.get(2).toString())
         	        .header(HttpHeaders.SET_COOKIE, cookies.get(3).toString())
-        	        .body("Signed in Successfully");        }
+        	        .body("Signed in Successfully");        
+		}
         
     }
-	 @RequestMapping(value="/SignUP",method = RequestMethod.POST)
-	    public String signUp(@RequestBody FawryUser fuser){
-	       
-	        String up = authenticationModel.signUp(fuser);
+	
+	@RequestMapping(value="/SignUP",method = RequestMethod.POST)
+	public String signUp(@RequestBody FawryUser fuser){
+		
+		String up = authenticationModel.signUp(fuser);
 
-	        if(up.equals("no")){
-	            return "User already exist (name or email)";
-	        }
-	        else{
-	            authenticationModel.setFaweryUser(fuser);
-	            return "Signed up successfully";
-	        }
-	    }
+		if(up.equals("no")){
+			return "User already exist (name or email)";
+		}
+		else{
+			authenticationModel.setFaweryUser(fuser);
+			return "Signed up successfully";
+		}
+	}
 	 
 	public void setUser( FawryUser fuser){
 		authenticationModel.setFaweryUser(fuser);
