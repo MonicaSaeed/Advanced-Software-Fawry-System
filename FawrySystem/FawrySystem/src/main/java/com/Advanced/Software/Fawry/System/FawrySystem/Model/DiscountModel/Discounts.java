@@ -1,4 +1,4 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.Model;
+package com.Advanced.Software.Fawry.System.FawrySystem.Model.DiscountModel;
 
 
 public abstract class Discounts {
@@ -8,7 +8,6 @@ public abstract class Discounts {
 	
 	
 	public Discounts(String dName, String dType, int dValue) {
-		// TODO Auto-generated constructor stub
 		this.dName=dName;
 		this.dType=dType;
 		this.dValue=dValue;

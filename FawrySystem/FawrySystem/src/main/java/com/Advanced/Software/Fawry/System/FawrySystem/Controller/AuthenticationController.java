@@ -11,8 +11,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,7 +34,7 @@ public class AuthenticationController {
         //String SIReturn = AC.signIn(userName, pass);
 
         if( fuser==null ){
-             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No Service found with this name");
+             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Invalid user name or password");
         }
         
         else{
@@ -45,7 +43,7 @@ public class AuthenticationController {
         	        .header(HttpHeaders.SET_COOKIE, cookies.get(0).toString())
         	        .header(HttpHeaders.SET_COOKIE, cookies.get(1).toString())
         	        .header(HttpHeaders.SET_COOKIE, cookies.get(2).toString())
-        	       // .header(HttpHeaders.SET_COOKIE, cookies.get(3).toString())
+        	        .header(HttpHeaders.SET_COOKIE, cookies.get(3).toString())
         	        .body("Signed in Successfully");        }
         
     }
@@ -55,7 +53,7 @@ public class AuthenticationController {
 	        String up = authenticationModel.signUp(fuser);
 
 	        if(up.equals("no")){
-	            return "user already exist (name or email)";
+	            return "User already exist (name or email)";
 	        }
 	        else{
 	            authenticationModel.setFaweryUser(fuser);

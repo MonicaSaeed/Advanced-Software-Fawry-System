@@ -4,27 +4,26 @@ import java.util.Vector;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.Advanced.Software.Fawry.System.FawrySystem.Controller.DiscountController.DiscountViewer;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.Discounts;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.OverallDiscount;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.SpecificDiscount;
+import com.Advanced.Software.Fawry.System.FawrySystem.Controller.DiscountController.ViewDiscount;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.DiscountModel.Discounts;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.DiscountModel.OverallDiscount;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.DiscountModel.SpecificDiscount;
 @Component
 @Service
 
 public class DiscountsBSL {
 	
 	public static Vector<Discounts> dList= new Vector<Discounts>();
-	protected DiscountViewer dViewer;
+	protected ViewDiscount dViewer;
 	/*public boolean (FawryUser user )
 	{
 		return user.getUserType();
 	}*/
 	
-	public String addDiscount(String dName,String dType,int dValue)
+	public String addDiscount(String dName,String dType,int dValue,String type)
 	{
-		boolean user=true;
-		
-		if(user)
+		System.out.println("typpppppppppppppppppppppp "+type);
+		if(type.equals("admin"))
 		{
 		if( dType.equals("SpecificDiscount"))
 		{

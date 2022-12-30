@@ -1,5 +1,4 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.Model;
-
+package com.Advanced.Software.Fawry.System.FawrySystem.Model.DiscountModel;
 
 public class OverallDiscount extends Discounts {
 	//Scanner input= new Scanner(System.in);
@@ -10,7 +9,6 @@ public class OverallDiscount extends Discounts {
 		super(dName, dType, dValue);
 		System.out.print("enter your transaction counter to apply this discount:");
 		//this.checkValidation=input.nextInt();
-		// TODO Auto-generated constructor stub
 	}
 	
 	/*public boolean checkDiscountValidation(String user)

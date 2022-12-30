@@ -4,23 +4,22 @@ public class FawryUser {
     private String userName;
 	private String password;
 	private String email;
-	private boolean userType;  //Check if the user is an admin or not (admin -> true, user->false)
+	private String userType;  //Check if the user is an admin or not (admin -> admin, userFawry->user)
 	
 
     FawryUser(){
 		
 	}
-	public FawryUser(String userName,String password,String email,boolean userType){
+	public FawryUser(String userName,String password,String email,String userType){
 		this.userName = userName;
 		this.password = password;
 		this.email = email;
 		this. userType = userType;
 	}
 
-	public FawryUser(String userName,String password){
-		this.userName = userName;
+	public FawryUser(String email,String password){
+		this.email = email;
 		this.password = password;
-		this.email = "";
 	}
 
 	public String getUserName() {
@@ -32,7 +31,7 @@ public class FawryUser {
 	public String getEmail() {
 		return email;
 	}
-	public boolean getUserType() {
+	public String getUserType() {
 		return userType;
 	}
 
@@ -47,10 +46,10 @@ public class FawryUser {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public void setUserType(Boolean userType) {
+	public void setUserType(String userType) {
 		this. userType = userType;
 	}
-	public void setFaweryUser(String userName,String password,String email,boolean userType){
+	public void setFaweryUser(String userName,String password,String email,String userType){
 		this.userName = userName;
 		this.password = password;
 		this.email = email;

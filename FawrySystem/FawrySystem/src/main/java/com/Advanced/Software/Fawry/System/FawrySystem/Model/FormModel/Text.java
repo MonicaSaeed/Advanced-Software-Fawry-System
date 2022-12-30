@@ -1,10 +1,4 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.Model;
-
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
+package com.Advanced.Software.Fawry.System.FawrySystem.Model.FormModel;
 
 public class Text implements FormFields {
 	protected String fieldType;

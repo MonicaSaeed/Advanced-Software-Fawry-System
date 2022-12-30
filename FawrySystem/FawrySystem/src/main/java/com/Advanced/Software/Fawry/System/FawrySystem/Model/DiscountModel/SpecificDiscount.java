@@ -1,4 +1,4 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.Model;
+package com.Advanced.Software.Fawry.System.FawrySystem.Model.DiscountModel;
 
 public class SpecificDiscount extends Discounts {
 	String checkValidation;
@@ -6,7 +6,6 @@ public class SpecificDiscount extends Discounts {
 		super(dName, dType, dValue);
 		//System.out.print("enter your service name to apply this discount:");
 		//this.checkValidation=input.next();
-		// TODO Auto-generated constructor stub
 	}
 	/*public boolean checkDiscountValidation(String serviceName)
 	{

@@ -2,9 +2,9 @@ package com.Advanced.Software.Fawry.System.FawrySystem.Model.Services;
 
 import java.util.Vector;
 
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.Form;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormFields;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.Text;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormModel.Form;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormModel.FormFields;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormModel.Text;
 
 public class Landline extends SystemService{
 		public Landline(boolean cash) {

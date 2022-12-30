@@ -2,11 +2,10 @@ package com.Advanced.Software.Fawry.System.FawrySystem.Model.Services;
 
 import java.util.Vector;
 
-import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.HandlerBSL;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.DropDown;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.Form;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormFields;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.Text;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormModel.DropDown;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormModel.Form;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormModel.FormFields;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormModel.Text;
 
 public class InternetPayment extends SystemService{	
 	public InternetPayment(boolean cash) {

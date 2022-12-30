@@ -1,6 +1,7 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.Model;
+package com.Advanced.Software.Fawry.System.FawrySystem.Model.FormModel;
 
 import java.util.Vector;
+
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor

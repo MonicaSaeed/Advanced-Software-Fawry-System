@@ -15,7 +15,7 @@ public class CookiesUtils {
     cookies.add(generateCookie("username", user.getUserName()));
     cookies.add(generateCookie("email", user.getEmail()));
     cookies.add(generateCookie("password", user.getPassword()));
-   // cookies.add(generateCookie("usertype", user.getUserType()));
+    cookies.add(generateCookie("usertype", user.getUserType()));
     return cookies;
   }
 

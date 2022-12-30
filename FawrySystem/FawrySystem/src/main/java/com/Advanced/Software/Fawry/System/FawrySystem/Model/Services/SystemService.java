@@ -3,7 +3,7 @@ package com.Advanced.Software.Fawry.System.FawrySystem.Model.Services;
 import java.util.Vector;
 
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.HandlerBSL;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.Form;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormModel.Form;
 
 public abstract class SystemService {
 	protected boolean payByCash;

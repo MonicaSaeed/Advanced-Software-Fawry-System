@@ -1,13 +1,9 @@
 package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic;
 
 import java.util.Vector;
-
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.FawryUser;
 
-@Component
 @Service
 public class AuthenticationBSL{
     public static Vector<FawryUser> fawryUsers = new Vector<>(); //to save all users' data
