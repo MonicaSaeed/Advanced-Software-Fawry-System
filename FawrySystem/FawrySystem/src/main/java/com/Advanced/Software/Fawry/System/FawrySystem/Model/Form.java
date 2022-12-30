@@ -1,14 +1,8 @@
 package com.Advanced.Software.Fawry.System.FawrySystem.Model;
 
 import java.util.Vector;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
 @NoArgsConstructor
 public class Form {
 	private int numberOfFields ;
@@ -24,6 +18,7 @@ public class Form {
 		this.numberOfFields=numberOfFields;
 		this.vec=vec;
 	}
+
 	
 	
 	public int getNumberOfFields()

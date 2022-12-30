@@ -11,6 +11,9 @@ public abstract class SystemService {
 	protected HandlerBSL handler;
 	protected Form form;
 	
+	public SystemService()
+	{
+	}
 	public SystemService(boolean cash)
 	{
 		this.payByCash=cash;

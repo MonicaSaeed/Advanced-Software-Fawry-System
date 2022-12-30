@@ -8,16 +8,8 @@ import com.Advanced.Software.Fawry.System.FawrySystem.Model.Form;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormFields;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Text;
 
-public class InternetPayment extends SystemService{
-	
-	protected boolean payByCash;
-	protected String serviceName;
-	protected HandlerBSL handler;
-	protected Form form;
-	
-	
+public class InternetPayment extends SystemService{	
 	public InternetPayment(boolean cash) {
-		
 		super(cash);
 		this.serviceName="Internet Payment service";
 		
@@ -33,7 +25,8 @@ public class InternetPayment extends SystemService{
 		FormFields dropdown=new DropDown( "amount",options);
 		fields.add(dropdown);
 		
-		Form form=new Form(2, fields);
+		Form f=new Form(2, fields);
+		this.form=f;
 	}
 
 }
