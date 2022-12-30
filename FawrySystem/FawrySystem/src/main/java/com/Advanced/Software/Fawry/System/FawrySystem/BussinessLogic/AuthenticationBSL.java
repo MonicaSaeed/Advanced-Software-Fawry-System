@@ -21,15 +21,10 @@ public class AuthenticationBSL{
             if(fawryuser.getUserName().equals(fuser.getUserName()) || fawryuser.getEmail().equals(fuser.getEmail())){
                 valid = "no";
 				break;
-            }
-			
+            }	
         }
 		return valid;
     }
-
-    
-
-
 	//return user type
 	public FawryUser signIn (FawryUser fawryuser){
 

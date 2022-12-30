@@ -22,7 +22,7 @@ public class DiscountsBSL {
 	
 	public String addDiscount(String dName,String dType,int dValue,String type)
 	{
-		System.out.println("typpppppppppppppppppppppp "+type);
+		//System.out.println("typpppppppppppppppppppppp "+type);
 		if(type.equals("admin"))
 		{
 		if( dType.equals("SpecificDiscount"))

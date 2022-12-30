@@ -1,23 +1,18 @@
 package com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions;
 
 public abstract class Transaction {
-	private String transUserName;
-    private float transPrice;
-    private boolean trasStatus;
+	protected String transUserName;
+	protected float transPrice;
+	protected boolean transStatus;
     
     
-    public Transaction() {}
-    public Transaction(String serviceUserName, String serviceName, float servicePrice,boolean trasStatus){
-		this.transUserName = serviceUserName;
-		this.transPrice = servicePrice;
-		this.trasStatus=trasStatus;
-	}
+    //public Transaction() {}
     
     public String getTransUserName() {
 		return this.transUserName;
 	}
 	public boolean getTrasStatus() {
-		return this.trasStatus;
+		return this.transStatus;
 	}
 	public float getTransPrice() {
 		return this.transPrice;
@@ -27,7 +22,7 @@ public abstract class Transaction {
 		this.transUserName = serviceUser;
 	}
 	public void setTrasStatus(boolean trasStatus) {
-		this.trasStatus = trasStatus;
+		this.transStatus = trasStatus;
 	}
 	public void setTransPrice(Float transPrice) {
 		this.transPrice = transPrice;

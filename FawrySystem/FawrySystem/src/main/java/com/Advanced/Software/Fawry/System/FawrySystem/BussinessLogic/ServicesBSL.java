@@ -14,48 +14,30 @@ import com.Advanced.Software.Fawry.System.FawrySystem.Model.Services.SystemServi
 @Component
 @Service
 public  class ServicesBSL {
-	public static Vector<SystemService> allServices = new Vector<>();
 	
-	public  Vector<SystemService> mobileRechargeVec = new Vector<>();
-	public  Vector<SystemService> landlineVec = new Vector<>();
-	public  Vector<SystemService> internetPaymentVec = new Vector<>();
-	public  Vector<SystemService> donationsVec = new Vector<>();
+	public  static Vector<SystemService> mobileRechargeVec = new Vector<>();
+	public  static Vector<SystemService> landlineVec = new Vector<>();
+	public  static Vector<SystemService> internetPaymentVec = new Vector<>();
+	public  static Vector<SystemService> donationsVec = new Vector<>();
 	
 	
 	public Vector<SystemService> searchForService(int serviceName)
     {
         if(serviceName==1) {
-            for(int i=0;i< allServices.size();i++)
-            {
-                if(allServices.get(i).getServiceName().equals("Mobile Recharge service"))
-                    mobileRechargeVec.add(allServices.get(i));
-            }
+
             return this.mobileRechargeVec;
         }else if(serviceName==2) {
-            for(int i=0;i< allServices.size();i++)
-            {
-                if(allServices.get(i).getServiceName().equals("Internet Payment service"))
-                    internetPaymentVec.add(allServices.get(i));
-            }
+
             return this.internetPaymentVec;
         }else if(serviceName==3) {
-            for(int i=0;i< allServices.size();i++)
-            {
-                if(allServices.get(i).getServiceName().equals("Landline service"))
-                    landlineVec.add(allServices.get(i));
-            }
+
             return this.landlineVec;
         }else if(serviceName==4) {
-            for(int i=0;i< allServices.size();i++)
-            {
-                if(allServices.get(i).getServiceName().equals("Donation service"))
-                    donationsVec.add(allServices.get(i));
-            }
+
             return this.donationsVec;
         }
         return null;
 
-        //return service obj to make transaction
     }
 
 
@@ -64,28 +46,27 @@ public  class ServicesBSL {
 	public boolean createServices()
 	{
 		MobileRecharge orangeM = new MobileRecharge(false);
-		allServices.add(orangeM);
+		mobileRechargeVec.add(orangeM);
 		MobileRecharge vodafoneM = new MobileRecharge(false);
-		allServices.add(vodafoneM);
+		mobileRechargeVec.add(vodafoneM);
 
 		InternetPayment orangeI = new InternetPayment(false);
-		allServices.add(orangeI);
+		internetPaymentVec.add(orangeI);
 		InternetPayment vodafoneI = new InternetPayment(false);
-		allServices.add(vodafoneI);
+		internetPaymentVec.add(vodafoneI);
 
 
 		Landline land1 = new Landline(false);
-		allServices.add(land1);
+		landlineVec.add(land1);
 		Landline land2 = new Landline(false);
-		allServices.add(land2);
+		landlineVec.add(land2);
 
 
 		Donations donation1 = new Donations(false);
-		allServices.add(donation1);
+		donationsVec.add(donation1);
 		Donations donation12= new Donations(false);
-		allServices.add(donation12);
+		donationsVec.add(donation12);
 		
-		System.out.println("allServices "+" "+allServices.get(1).getServiceName());
 		return true;
 
 	}

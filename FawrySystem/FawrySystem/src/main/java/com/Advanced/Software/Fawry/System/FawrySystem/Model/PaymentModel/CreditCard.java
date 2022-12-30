@@ -4,9 +4,7 @@ public class CreditCard {
 	private String creditCardNum;
 	private String password;
 	private float accountBalance;
-	public CreditCard(){
-		
-	}
+	public CreditCard(){}
 	public CreditCard(String creditCardNum,String password, float accountBalance)
 	{
 		this.password=password;

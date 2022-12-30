@@ -2,6 +2,7 @@ package com.Advanced.Software.Fawry.System.FawrySystem.Controller.PaymentControl
 
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,10 +34,10 @@ public class CreditCardController {
 		}*/
 
 	@PostMapping(value = "/CreditCard") 
-	public float makePayment(@RequestBody CreditCardController.PayCreditCardInfo payCredit)
+	public String makePayment(@RequestBody CreditCardController.PayCreditCardInfo payCredit,@CookieValue("username")String username)
 	{
 		//System.out.print("blllaa"+payCredit.cardnumber+" "+payCredit.amount);
-		return creditBSL.pay(payCredit.cardnumber, payCredit.amount);
+		return creditBSL.pay(payCredit.cardnumber, payCredit.amount,username);
 	}
 	
 	@RequestMapping(value="/addCard",method = RequestMethod.POST)
