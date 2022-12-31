@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.TransactionBSL.AddToWalletBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.TransactionBSL.PaymentTransactionBSL;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.CreditCard;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.Wallet;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions.AddToWalletTransaction;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions.PaymentTransaction;
@@ -57,7 +56,7 @@ public class WalletBSL {
 		}*/
 		return found;
 	}	
-	public float pay(float paymentAmount, String username) {
+	public float pay(float paymentAmount, String username,String serviceName ) {
 		PaymentTransaction paid;
 		PaymentTransactionBSL wallet2=new PaymentTransactionBSL();
 		if(checkBalance(paymentAmount))

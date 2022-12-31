@@ -2,7 +2,7 @@ package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSL
 
 import java.util.Vector;
 
-import org.springframework.stereotype.Component;
+
 import org.springframework.stereotype.Service;
 
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.TransactionBSL.PaymentTransactionBSL;
@@ -38,7 +38,7 @@ public class CreditCardBSL {
 		return false; 
 	}*/
 	
-	public String pay(String cardnumber, float amount, String username) {
+	public String pay(String cardnumber, float amount, String username,String serviceName) {
 		PaymentTransactionBSL obj= new PaymentTransactionBSL() ;
 		PaymentTransaction paid;
 		for(int i=0;i<creditCards.size();i++)

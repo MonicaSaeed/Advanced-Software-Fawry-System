@@ -9,7 +9,7 @@ import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormModel.Text;
 public class Donations extends SystemService{	
 	public Donations(boolean cash) {	
 		super(cash);		
-		this.serviceName="Donation service";
+		this.serviceName="Donationservice";
 		
 		Vector<FormFields> fields= new Vector<>();
 //		

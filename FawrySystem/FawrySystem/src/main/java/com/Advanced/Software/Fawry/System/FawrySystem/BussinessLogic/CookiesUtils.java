@@ -19,6 +19,10 @@ public class CookiesUtils {
     return cookies;
   }
 
+  public ResponseCookie generateUserCookieService(String ser) {
+    return generateCookie("serviceName",ser);
+  }
+
   private ResponseCookie generateCookie(String name, String value) {
     ResponseCookie cookie = ResponseCookie.from(name, value).maxAge(24 * 60 * 60).httpOnly(true).build();
     return cookie;

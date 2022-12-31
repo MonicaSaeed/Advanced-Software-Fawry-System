@@ -52,11 +52,13 @@ public class DiscountsBSL {
 		for(int i=0;i<dList.size();i++)
 		{
 			disc+=" Discount name: "+dList.get(i).getDName()+" Discount type: "+dList.get(i).getDType()+" Discount value: "+dList.get(i).getDValue()+"%\n";
-
-			//System.out.print("Discount name	"+bsl.dList.get(i).getDName()+"\nDiscount type: "+bsl.dList.get(i).getDType()+"\nDiscount value: "+bsl.dList.get(i).getDValue()+"%\n");
-
 		}
-		return disc;
+		if(disc==""){
+			return "There are no discounts to display";
+		}
+		else{
+			return disc;
+		}
 	}
 	public Discounts viewDiscounts(int position)
 	{

@@ -10,7 +10,7 @@ import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormModel.Text;
 public class InternetPayment extends SystemService{	
 	public InternetPayment(boolean cash) {
 		super(cash);
-		this.serviceName="Internet Payment service";
+		this.serviceName="InternetPaymentservice";
 		
 		Vector<FormFields> fields= new Vector<>();
 		Vector<String> options= new Vector<>();

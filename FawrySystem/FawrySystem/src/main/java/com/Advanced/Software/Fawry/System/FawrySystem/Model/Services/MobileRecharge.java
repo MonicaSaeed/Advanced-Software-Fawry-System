@@ -9,7 +9,7 @@ import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormModel.Text;
 public class MobileRecharge extends SystemService{	
 	public MobileRecharge(boolean cash) {
 		super(cash);
-		this.serviceName="Mobile Recharge service";
+		this.serviceName="MobileRechargeservice";
 		
 		Vector<FormFields> fields= new Vector<>();
 		FormFields text1=new Text("amount");

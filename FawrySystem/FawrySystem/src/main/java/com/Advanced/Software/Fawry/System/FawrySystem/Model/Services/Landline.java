@@ -9,7 +9,7 @@ import com.Advanced.Software.Fawry.System.FawrySystem.Model.FormModel.Text;
 public class Landline extends SystemService{
 		public Landline(boolean cash) {
 			super(cash);
-			this.serviceName="Landline service";
+			this.serviceName="Landlineservice";
 			
 			Vector<FormFields> fields= new Vector<>();
 //			

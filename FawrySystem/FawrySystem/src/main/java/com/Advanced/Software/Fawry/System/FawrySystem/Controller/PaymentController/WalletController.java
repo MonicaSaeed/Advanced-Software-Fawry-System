@@ -3,11 +3,8 @@ package com.Advanced.Software.Fawry.System.FawrySystem.Controller.PaymentControl
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSL.CreditCardBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSL.WalletBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.CreditCard;
 @RestController
@@ -25,9 +22,9 @@ public class WalletController {
 	{walletBSL=new WalletBSL();}
 	
 	@GetMapping(value="/payByWallet/{paymentAmount}")
-	public float pay(@PathVariable float paymentAmount,@CookieValue("username")String username )
+	public float pay(@PathVariable float paymentAmount,@CookieValue("username")String username ,@CookieValue("serviceName") String serviceName)
 	{
-		return walletBSL.pay(paymentAmount,username);
+		return walletBSL.pay(paymentAmount,username,serviceName);
 	}
 	
 	@GetMapping(value="/add money to wallet/{number}/{amountToBeTransfered}")
