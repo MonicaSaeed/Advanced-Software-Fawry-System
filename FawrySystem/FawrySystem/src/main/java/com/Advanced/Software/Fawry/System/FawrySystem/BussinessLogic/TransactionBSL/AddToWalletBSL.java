@@ -3,7 +3,7 @@ package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.Transactio
 import java.util.Vector;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions.AddToWalletTransaction;
 
-public class AddToWalletTransactionBSL {
+public class AddToWalletBSL {
 	public  static Vector<AddToWalletTransaction> wallet = new Vector<>();
 	
 	public void AddToWalletTransactionVector(AddToWalletTransaction walletTrans)
@@ -12,7 +12,7 @@ public class AddToWalletTransactionBSL {
 		
 	}
 	public Vector<AddToWalletTransaction> printVector(){
-		return AddToWalletTransactionBSL.wallet;
+		return AddToWalletBSL.wallet;
 	}
 
 }
