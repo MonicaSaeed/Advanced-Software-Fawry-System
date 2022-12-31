@@ -56,18 +56,20 @@ public class WalletBSL {
 		}*/
 		return found;
 	}	
-	public float pay(float paymentAmount, String username,String serviceName ) {
+	public boolean pay(float paymentAmount, String username,String serviceName) {
 		PaymentTransaction paid;
 		PaymentTransactionBSL wallet2=new PaymentTransactionBSL();
 		if(checkBalance(paymentAmount))
 		{
 			wallet.setTotalFunds(wallet.getTotalFund()-paymentAmount);
+			System.out.print("wallet value: "+wallet.getTotalFund()+"\n");
 			paid=new PaymentTransaction("wallet",serviceName,username,paymentAmount,true);
 			wallet2.addToPaymentTransaction(paid);
+			return true;
 		}
 		paid=new PaymentTransaction("wallet",serviceName,username,paymentAmount,true);
 		wallet2.addToPaymentTransaction(paid);
-		return wallet.getTotalFund();
+		return false;
 			
 		// TODO Auto-generated method stub
 	}

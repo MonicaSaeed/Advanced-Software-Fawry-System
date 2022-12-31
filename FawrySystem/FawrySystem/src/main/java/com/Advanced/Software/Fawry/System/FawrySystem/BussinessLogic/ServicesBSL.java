@@ -12,7 +12,7 @@ import com.Advanced.Software.Fawry.System.FawrySystem.Model.Services.Landline;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Services.MobileRecharge;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Services.SystemService;
 @Component
-@Service
+
 public  class ServicesBSL {
 	
 	public  static Vector<SystemService> mobileRechargeVec = new Vector<>();
@@ -20,27 +20,24 @@ public  class ServicesBSL {
 	public  static Vector<SystemService> internetPaymentVec = new Vector<>();
 	public  static Vector<SystemService> donationsVec = new Vector<>();
 	
-	
-	public Vector<SystemService> searchForService(int serviceName)
-    {
-        if(serviceName==1) {
+	public Vector<SystemService> searchForService(String serviceName)
+    {		System.out.print(serviceName);
+        if(serviceName.equals("MobileRechargeservice")) {
 
-            return this.mobileRechargeVec;
-        }else if(serviceName==2) {
+            return this.mobileRechargeVec;  
+        }
+        else if(serviceName.equals("InternetPaymentservice")) {
 
             return this.internetPaymentVec;
-        }else if(serviceName==3) {
+        }else if(serviceName.equals("Landlineservice")) {
 
             return this.landlineVec;
-        }else if(serviceName==4) {
+        }else if(serviceName.equals("Donationservice")) {
 
             return this.donationsVec;
         }
         return null;
-
     }
-
-
 	//singleton ->to create services at one  
 	@Autowired
 	public boolean createServices()
@@ -69,6 +66,28 @@ public  class ServicesBSL {
 		
 		return true;
 
+	}
+	public String fillServiceForm(String amount,String directory,int serviceName)
+	{
+		
+		if(serviceName==1) {
+            this.mobileRechargeVec.get(0).setFormData(amount, directory);  
+            return "filled successfully";
+        }else if(serviceName==2) {
+
+          this.internetPaymentVec.get(0).setFormData(amount, directory);
+          return "filled successfully";
+        }else if(serviceName==3) {
+
+            this.landlineVec.get(0).setFormData(amount, directory);
+            return "filled successfully";
+        }else if(serviceName==4) {
+
+           this.donationsVec.get(0).setFormData(amount, directory);
+           return "filled successfully";
+        }
+        return "failed";
+		
 	}
 		
 }

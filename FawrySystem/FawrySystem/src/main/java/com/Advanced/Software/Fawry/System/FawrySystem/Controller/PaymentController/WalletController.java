@@ -22,7 +22,7 @@ public class WalletController {
 	{walletBSL=new WalletBSL();}
 	
 	@GetMapping(value="/payByWallet/{paymentAmount}")
-	public float pay(@PathVariable float paymentAmount,@CookieValue("username")String username ,@CookieValue("serviceName") String serviceName)
+	public boolean pay(@PathVariable float paymentAmount,@CookieValue("username")String username ,@CookieValue("serviceName") String serviceName)
 	{
 		return walletBSL.pay(paymentAmount,username,serviceName);
 	}

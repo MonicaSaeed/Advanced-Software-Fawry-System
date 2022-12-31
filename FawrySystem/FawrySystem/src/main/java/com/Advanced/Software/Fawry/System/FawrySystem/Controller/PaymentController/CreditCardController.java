@@ -31,7 +31,7 @@ public class CreditCardController {
 		}*/
 
 	@PostMapping(value = "/CreditCard") 
-	public String makePayment(@RequestBody CreditCardController.PayCreditCardInfo payCredit,@CookieValue("username")String username ,@CookieValue("serviceName") String serviceName)
+	public boolean makePayment(@RequestBody CreditCardController.PayCreditCardInfo payCredit,@CookieValue("username")String username ,@CookieValue("serviceName") String serviceName)
 	{
 		//System.out.print("blllaa"+payCredit.cardnumber+" "+payCredit.amount);
 		return creditBSL.pay(payCredit.cardnumber, payCredit.amount,username,serviceName);
