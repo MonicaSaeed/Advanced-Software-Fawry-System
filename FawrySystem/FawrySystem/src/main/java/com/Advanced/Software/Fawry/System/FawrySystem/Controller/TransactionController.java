@@ -2,21 +2,19 @@ package com.Advanced.Software.Fawry.System.FawrySystem.Controller;
 
 import java.util.Vector;
 
-import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.TransactionBSL.AddToWalletTransactionBSL;
+import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.TransactionBSL.AddToWalletBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.TransactionBSL.PaymentTransactionBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.TransactionBSL.RefundTransactionBSL;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions.AddToWalletTransaction;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions.PaymentTransaction;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions.Transaction;
 
 public class TransactionController {
-    private AddToWalletTransactionBSL walletBSL;
+    private AddToWalletBSL walletBSL;
     private PaymentTransactionBSL paymentBSL;
     private RefundTransactionBSL refundBsl;
 
 	public TransactionController()
 	{
-		this.walletBSL=new AddToWalletTransactionBSL();
+		this.walletBSL=new AddToWalletBSL();
         this.paymentBSL=new PaymentTransactionBSL();
         this.refundBsl=new RefundTransactionBSL();
 	}

@@ -34,7 +34,7 @@ public class AuthenticationController {
         //String SIReturn = AC.signIn(userName, pass);
 
         if( fuser==null ){
-             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Invalid user name or password");
+             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Invalid email or password");
         }
         
         else{

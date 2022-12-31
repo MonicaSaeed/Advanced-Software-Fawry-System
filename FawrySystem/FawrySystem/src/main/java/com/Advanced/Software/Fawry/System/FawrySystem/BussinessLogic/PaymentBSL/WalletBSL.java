@@ -3,7 +3,7 @@ package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSL
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.TransactionBSL.AddToWalletTransactionBSL;
+import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.TransactionBSL.AddToWalletBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.TransactionBSL.PaymentTransactionBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.CreditCard;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.Wallet;
@@ -27,7 +27,7 @@ public class WalletBSL {
 	{   CreditCardBSL card=new CreditCardBSL();
 		boolean found=false;
 		AddToWalletTransaction wallett;
-		AddToWalletTransactionBSL obj= new AddToWalletTransactionBSL() ;
+		AddToWalletBSL obj= new AddToWalletBSL() ;
 		
 		for(int i=0;i<card.creditCards.size();i++)
 		{
