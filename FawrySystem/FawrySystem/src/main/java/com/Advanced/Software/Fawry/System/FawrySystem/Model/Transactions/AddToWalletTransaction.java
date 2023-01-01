@@ -6,8 +6,8 @@ public class AddToWalletTransaction extends Transaction {
 	
 	public AddToWalletTransaction(String creditCardNumber,String transUserName,float transPrice,boolean trasStatus) {
 		this.creditCardNumber=creditCardNumber;
-		super.transUserName=transUserName;
-		super. transPrice=transPrice;
-		super. transStatus=transStatus;	
+		this.transUserName=transUserName;
+		this.transPrice=transPrice;
+		this.transStatus=transStatus;	
 	}
 }

@@ -8,9 +8,9 @@ public class PaymentTransaction extends Transaction{
 	public PaymentTransaction(String paymentMethod, String serviceName,String transUserName,float transPrice,boolean trasStatus) {
 		this.paymentMethod=paymentMethod;
 		this.serviceName=serviceName;
-		super.transUserName=transUserName;
-		super. transPrice=transPrice;
-		super. transStatus=transStatus;	
+		this.transUserName=transUserName;
+		this. transPrice=transPrice;
+		this. transStatus=transStatus;	
 	}
 	public PaymentTransaction() {
 		// TODO Auto-generated constructor stub

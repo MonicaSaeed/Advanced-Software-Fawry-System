@@ -33,10 +33,16 @@ public class PaymentController {
       return "your request is pending";
    }
 
+   public static class PayWalletInfo{
+		//public CreditCard obj;
+        public int paymentTransactionID;
+        public boolean response;
+        
+    }
    @PostMapping(value="/dealWithRefundRequest")
-   public String dealWithRefundRequest(@RequestBody String paymentTransactionID,@RequestBody boolean response,@CookieValue("usertype")String type )
+   public String dealWithRefundRequest(@RequestBody PaymentController.PayWalletInfo p ,@CookieValue("usertype")String type )
    {
-      return paymentTransactionBSL.dealWithRefundRequest(paymentTransactionID,response,type);
+      return paymentTransactionBSL.dealWithRefundRequest(p.paymentTransactionID,p.response,type);
    }
 
    @PostMapping(value="/addRefundRequest")

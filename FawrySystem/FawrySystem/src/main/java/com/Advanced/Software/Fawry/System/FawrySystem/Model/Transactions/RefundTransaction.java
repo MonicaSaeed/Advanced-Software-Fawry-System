@@ -18,5 +18,8 @@ public class RefundTransaction extends Transaction {
 	public int getStatus() {
 		return status;
 	}
+	public void setRefundStatus(int status) {
+		this.status=status;
+	}
 
 }

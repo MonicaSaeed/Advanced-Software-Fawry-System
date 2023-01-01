@@ -7,7 +7,6 @@ import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.Authenticat
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.TransactionBSL.AddToWalletBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.TransactionBSL.PaymentTransactionBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.FawryUser;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.Wallet;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions.AddToWalletTransaction;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions.PaymentTransaction;
 @Component
@@ -46,7 +45,7 @@ public class WalletBSL {
 					if(AuthenticationBSL.fawryUsers.get(j).getUserName().equals(username))
 					{
 						AuthenticationBSL.fawryUsers.get(j).getUserWallet().setTotalFunds(AuthenticationBSL.fawryUsers.get(j).getUserWallet().getTotalFund()+amountToBeTransfered);
-						System.out.print(card.creditCards.get(i).getAccountBalance()+" walletttttttttttttttttttttt"+AuthenticationBSL.fawryUsers.get(j).getUserWallet().getTotalFund());
+						//System.out.print(card.creditCards.get(i).getAccountBalance()+" walletttttttttttttttttttttt"+AuthenticationBSL.fawryUsers.get(j).getUserWallet().getTotalFund());
 						break;
 
 					}
@@ -55,7 +54,7 @@ public class WalletBSL {
 				card.creditCards.get(i).setAccountBalance(card.creditCards.get(i).getAccountBalance()-amountToBeTransfered);
 				wallett= new AddToWalletTransaction(number,username,amountToBeTransfered,true);
 				obj.AddToWalletTransactionVector(wallett);
-				System.out.print(card.creditCards.get(i).getAccountBalance());
+				//System.out.print(card.creditCards.get(i).getAccountBalance());
 
 				 found=true;
 				 return found;
@@ -88,7 +87,7 @@ public class WalletBSL {
 			wallet2.addToPaymentTransaction(paid);
 			return true;
 		}
-		paid=new PaymentTransaction("wallet",serviceName,username,paymentAmount,true);
+		paid=new PaymentTransaction("wallet",serviceName,username,paymentAmount,false);
 		wallet2.addToPaymentTransaction(paid);
 		return false;
 			

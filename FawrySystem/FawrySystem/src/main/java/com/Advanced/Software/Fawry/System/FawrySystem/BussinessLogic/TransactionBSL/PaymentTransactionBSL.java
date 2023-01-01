@@ -12,7 +12,8 @@ public class PaymentTransactionBSL {
 	
 	public void addToPaymentTransaction(PaymentTransaction paymentTrans )
 	{
-		paymentTrans.setTransID(payment.size()+"p");
+		paymentTrans.setTransID(payment.size());
+		System.out.println("blaaaaaa "+paymentTrans.getTransID());
 		payment.add(paymentTrans);
 	}
 	public Vector<PaymentTransaction> printVector(){
@@ -30,22 +31,29 @@ public class PaymentTransactionBSL {
 		return PaymentTransactionBSL.refund;
 	}
 
-	public String dealWithRefundRequest(String paymentTransactionID,boolean response,String type)
+	public String dealWithRefundRequest(int paymentTransactionID,boolean response,String type)
 	{
+		AuthenticationBSL autBsl=new AuthenticationBSL();
+		System.out.println("typpppppp:"+type);
 		if(type.equals("admin"))
 		{
+	
 			if(response)
 			{
-				for(int i=0;i<AuthenticationBSL.fawryUsers.size();i++)
+				for(int i=0;i<autBsl.fawryUsers.size();i++)
 				{
-					if(AuthenticationBSL.fawryUsers.get(i).getUserName().equals(payment.get(i-1).getTransUserName()))
+					System.out.println(response+"payment.get(paymentTransactionID).getTrasStatus()="+payment.get(paymentTransactionID).getTrasStatus());
+					if(autBsl.fawryUsers.get(i).getUserName().equals(payment.get(paymentTransactionID).getTransUserName()) && payment.get(paymentTransactionID).getTrasStatus()==true)
 					{
-						AuthenticationBSL.fawryUsers.get(i).getUserWallet().setTotalFunds(AuthenticationBSL.fawryUsers.get(i).getUserWallet().getTotalFund()+payment.get(i-1).getTransPrice());
+						autBsl.fawryUsers.get(i).getUserWallet().setTotalFunds(autBsl.fawryUsers.get(i).getUserWallet().getTotalFund()+payment.get(paymentTransactionID).getTransPrice());
+						//refund.get(paymentTransactionID).setRefundStatus(1);
+						return "done";
 					}
 				}
 			}
-			else 
-			{return "request rejected";}
+			
+			return "request rejected";
+			
 
 
 		}
