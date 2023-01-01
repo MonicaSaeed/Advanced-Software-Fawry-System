@@ -1,4 +1,4 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.Controller.PaymentController;
+package com.Advanced.Software.Fawry.System.FawrySystem.Controller.PaymentControllerPackage;
 
 import org.springframework.web.bind.annotation.CookieValue;
 
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSL.CreditCardBSL;
+import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSLPackage.CreditCardBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.CreditCard;
 
 @RestController

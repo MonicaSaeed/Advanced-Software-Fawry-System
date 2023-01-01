@@ -1,4 +1,4 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSL;
+package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSLPackage;
 
 import java.util.Vector;
 

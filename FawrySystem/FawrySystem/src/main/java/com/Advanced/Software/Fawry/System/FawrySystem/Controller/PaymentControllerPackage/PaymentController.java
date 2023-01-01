@@ -1,10 +1,10 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.Controller.PaymentController;
+package com.Advanced.Software.Fawry.System.FawrySystem.Controller.PaymentControllerPackage;
 
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSL.PaymentBSL;
+import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSLPackage.PaymentBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentInfo;
 @RestController
 public class PaymentController {
