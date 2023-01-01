@@ -1,21 +1,22 @@
 package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSLPackage;
 
-import java.util.Vector;
-
 import org.springframework.stereotype.Service;
 
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.DiscountsBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.ServicesBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.PaymentInfo;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.Services.SystemService;
 @Service
 public class PaymentBSL {
 	
+
+
+
 	public String payLogic(PaymentInfo paymentInfo,String username )
 	{ 
 		float amount;
 		DiscountsBSL discount = new DiscountsBSL();
 		amount=discount.applyAllDiscounts(paymentInfo.getAmount(), paymentInfo.getServiceName(),username);
+		
 		if(paymentInfo.getPaymentMethod().equals("creditCard"))
 		{ 
 			CreditCardBSL card=new CreditCardBSL();

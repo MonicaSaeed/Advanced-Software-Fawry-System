@@ -25,26 +25,23 @@ public class PaymentController {
 		return paymentBSL.payLogic(paymentInfo, username);
 	}
 
-   // @PostMapping(value="/requestRefund")
-   // public String refundRequest(@RequestBody PaymentTransaction transaction)
-   // {
-   //    RefundTransaction refundTransaction= new RefundTransaction(transaction);
-   //    paymentTransactionBSL.addToRefundTransVector(refundTransaction);
-   //    return "your request is pending";
-   // }
-
    public static class PayWalletInfo{
-		//public CreditCard obj;
         public int paymentTransactionID;
         public boolean response;
         
     }
-   @PostMapping(value="/dealWithRefundRequest")
+  
+  
+  
+    @PostMapping(value="/dealWithRefundRequest")
    public String dealWithRefundRequest(@RequestBody PaymentController.PayWalletInfo p ,@CookieValue("usertype")String type )
    {
       return paymentTransactionBSL.dealWithRefundRequest(p.paymentTransactionID,p.response,type);
    }
 
+  
+  
+  
    @PostMapping(value="/addRefundRequest")
    public String addToRefundTransVector(@RequestBody PaymentTransaction refundTrans )
    {
@@ -57,21 +54,3 @@ public class PaymentController {
    }
 
 }
-/*
-   "amount":1000,
-      "directory":"orange",
-     "serviceName":"MobileRechargeservice",
-     "paymentMethod":"wallet"
-     
-    "amount":1000,
-       "directory":"orange",
-      "serviceName":"MobileRechargeservice",
-      "paymentMethod":"creditCard",
-      "creditCardNum":"1"
-
- 	"amount":1000,
-      "directory":"orange",
-     "serviceName":"MobileRechargeservice",
-     "paymentMethod":"wallet"
-     
- */

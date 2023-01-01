@@ -27,28 +27,15 @@ public class CreditCardBSL {
 		
 		return ("added successfully"+cerditcard.getAccountBalance());	
 	}
-	/*public boolean validCard(CreditCard cerditcard)
-	{
-		for(int i=0;i<creditCards.size();i++)
-		{
-			if(creditCards.get(i)==cerditcard)
-			{
-				return true;
-			}	
-		}
-		return false; 
-	}*/
+	
 	
 	public boolean pay(String cardnumber, float amount, String username,String serviceName) {
 		PaymentTransactionBSL obj= new PaymentTransactionBSL() ;
-		//PaymentTransaction paid;
-		for(int i=0;i<creditCards.size();i++)
+		for(int i=0;i<this.creditCards.size();i++)
 		{
 			if(creditCards.get(i).getcreditCardNum().equals(cardnumber)&&creditCards.get(i).getAccountBalance()>=amount)
 			{
 				creditCards.get(i).setAccountBalance(creditCards.get(i).getAccountBalance()-amount);
-				//System.out.print(creditCards.get(i).getcreditCardNum()+" "+creditCards.get(i).getAccountBalance()+" "+creditCards.get(i).getPassword()+"\n");
-				String value=""+creditCards.get(i).getAccountBalance();
 				PaymentTransaction paid=new PaymentTransaction("creditcard",serviceName,username,amount,true);
 				obj.addToPaymentTransaction(paid);
 				return true;

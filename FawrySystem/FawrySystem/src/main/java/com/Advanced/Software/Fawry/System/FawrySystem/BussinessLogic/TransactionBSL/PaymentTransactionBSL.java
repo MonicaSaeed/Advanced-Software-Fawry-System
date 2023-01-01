@@ -31,10 +31,16 @@ public class PaymentTransactionBSL {
 		return PaymentTransactionBSL.refund;
 	}
 
+	
+	
+	
 	public String dealWithRefundRequest(int paymentTransactionID,boolean response,String type)
 	{
 		AuthenticationBSL autBsl=new AuthenticationBSL();
-		System.out.println("typpppppp:"+type);
+		if(payment.size()<=paymentTransactionID)
+		{
+			return "this transaction id not found";
+		}
 		if(type.equals("admin"))
 		{
 	

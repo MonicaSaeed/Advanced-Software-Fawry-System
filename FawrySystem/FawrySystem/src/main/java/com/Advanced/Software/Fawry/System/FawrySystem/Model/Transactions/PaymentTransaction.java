@@ -5,7 +5,7 @@ public class PaymentTransaction extends Transaction{
 	private String paymentMethod;
 	private String serviceName;
 	
-	public PaymentTransaction(String paymentMethod, String serviceName,String transUserName,float transPrice,boolean trasStatus) {
+	public PaymentTransaction(String paymentMethod, String serviceName,String transUserName,float transPrice,boolean transStatus) {
 		this.paymentMethod=paymentMethod;
 		this.serviceName=serviceName;
 		this.transUserName=transUserName;
