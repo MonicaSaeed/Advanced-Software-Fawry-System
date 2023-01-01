@@ -12,7 +12,7 @@ How to run the project? <br />
 4- if you are an admin: <br />
 - you can add discount 
 - view all transactions done such as payment transactions or refunds  
-- accept or reject refund requests 
+- accept or reject refund requests  <br />
 5- if you are a user: <br />
 - you can add credit card 
 - add funds to wallet from your credit card 
