@@ -24,7 +24,8 @@ public class CreditCardBSL {
 			}	
 		}
 		creditCards.add(cerditcard);
-		return"added successfully";	
+		
+		return ("added successfully"+cerditcard.getAccountBalance());	
 	}
 	/*public boolean validCard(CreditCard cerditcard)
 	{

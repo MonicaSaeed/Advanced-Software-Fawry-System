@@ -1,18 +1,18 @@
 package com.Advanced.Software.Fawry.System.FawrySystem.Controller.PaymentControllerPackage;
 
 import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSLPackage.WalletBSL;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.CreditCard;
 @RestController
 public class WalletController {
 	
 	public static class PayWalletInfo{
-		public CreditCard obj;
-        public String number;
+		//public CreditCard obj;
+        public String numberCredit;
         public float amountToBeTransfered;
         
     }
@@ -21,9 +21,9 @@ public class WalletController {
 	public WalletController()
 	{walletBSL=new WalletBSL();}
 	
-	@GetMapping(value="/add money to wallet/{number}/{amountToBeTransfered}")
-	public boolean addFunds(@PathVariable String number ,@PathVariable float amountToBeTransfered,@CookieValue("username")String username)
+	@RequestMapping(value="/addmoneytowallet",method = RequestMethod.POST)
+	public boolean addFunds(@RequestBody WalletController.PayWalletInfo p,@CookieValue("username")String username)
 	{
-		return walletBSL.addFunds(number, amountToBeTransfered,username);
+		return walletBSL.addFunds(p.numberCredit, p.amountToBeTransfered,username);
 	}
 }

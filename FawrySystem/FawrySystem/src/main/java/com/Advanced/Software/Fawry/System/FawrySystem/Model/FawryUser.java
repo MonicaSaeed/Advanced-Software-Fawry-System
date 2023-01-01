@@ -10,19 +10,23 @@ public class FawryUser {
 	private Wallet userWallet;
 
     FawryUser(){
-		
+		this.userWallet=new Wallet();
+		this.userWallet.setTotalFunds(0);
 	}
 	public FawryUser(String userName,String password,String email,String userType){
 		this.userName = userName;
 		this.password = password;
 		this.email = email;
 		this. userType = userType;
-		this.userWallet= new Wallet(0);
+		this.userWallet=new Wallet();
+		this.userWallet.setTotalFunds(0);
 	}
 
 	public FawryUser(String email,String password){
 		this.email = email;
 		this.password = password;
+		this.userWallet=new Wallet();
+		this.userWallet.setTotalFunds(0);
 	}
 
 	public String getUserName() {

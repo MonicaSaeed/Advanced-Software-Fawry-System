@@ -39,21 +39,24 @@ public class WalletBSL {
 		
 		for(int i=0;i<card.creditCards.size();i++)
 		{
-			if(card.creditCards.get(i).getcreditCardNum().equals(number) &&
-				card.creditCards.get(i).getAccountBalance()>=amountToBeTransfered)
+			if(card.creditCards.get(i).getcreditCardNum().equals(number) &&card.creditCards.get(i).getAccountBalance()>=amountToBeTransfered)
 			{
-				for(int j=0;i<AuthenticationBSL.fawryUsers.size();j++)
+				for(int j=0;j<AuthenticationBSL.fawryUsers.size();j++)
 				{
 					if(AuthenticationBSL.fawryUsers.get(j).getUserName().equals(username))
 					{
 						AuthenticationBSL.fawryUsers.get(j).getUserWallet().setTotalFunds(AuthenticationBSL.fawryUsers.get(j).getUserWallet().getTotalFund()+amountToBeTransfered);
+						System.out.print(card.creditCards.get(i).getAccountBalance()+" walletttttttttttttttttttttt"+AuthenticationBSL.fawryUsers.get(j).getUserWallet().getTotalFund());
+						break;
+
 					}
 
 				}
 				card.creditCards.get(i).setAccountBalance(card.creditCards.get(i).getAccountBalance()-amountToBeTransfered);
 				wallett= new AddToWalletTransaction(number,username,amountToBeTransfered,true);
 				obj.AddToWalletTransactionVector(wallett);
-				//System.out.print(card.creditCards.get(i).getAccountBalance());
+				System.out.print(card.creditCards.get(i).getAccountBalance());
+
 				 found=true;
 				 return found;
 				

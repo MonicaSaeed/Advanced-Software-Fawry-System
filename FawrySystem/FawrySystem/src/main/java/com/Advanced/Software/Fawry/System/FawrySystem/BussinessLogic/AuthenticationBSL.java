@@ -16,9 +16,9 @@ public class AuthenticationBSL{
 	public String signUp (FawryUser fawryuser){ 
 		String valid ="yes";
         for(int i=0;i<fawryUsers.size();i++){
-			FawryUser fuser = fawryUsers.get(i);
+			//FawryUser fuser = fawryUsers.get(i);
 
-            if(fawryuser.getUserName().equals(fuser.getUserName()) || fawryuser.getEmail().equals(fuser.getEmail())){
+            if(fawryuser.getUserName().equals(fawryUsers.get(i).getUserName()) || fawryuser.getEmail().equals(fawryUsers.get(i).getEmail())){
                 valid = "no";
 				break;
             }	
@@ -29,9 +29,12 @@ public class AuthenticationBSL{
 	public FawryUser signIn (FawryUser fawryuser){
 
 		for(int i=0;i<fawryUsers.size();i++){
-            FawryUser fuser = fawryUsers.get(i);            
-            if(fawryuser.getEmail().equals(fuser.getEmail())  && fawryuser.getPassword().equals(fuser.getPassword()) ){
-				return fuser;
+            //FawryUser fuser = fawryUsers.get(i);      
+            //System.out.println("nnnnnnnnnnnnnnnnnn  "+fuser.getUserWallet());      
+            if(fawryuser.getEmail().equals(fawryUsers.get(i).getEmail())  && fawryuser.getPassword().equals(fawryUsers.get(i).getPassword()) ){
+                //fawryuser=fawryUsers.get(i);
+                //System.out.println("mmmmmmmmmmmmmmmmmm:  "+fawryuser.getUserWallet().getTotalFund());
+				return fawryUsers.get(i);
             }
         }
         return null;	 

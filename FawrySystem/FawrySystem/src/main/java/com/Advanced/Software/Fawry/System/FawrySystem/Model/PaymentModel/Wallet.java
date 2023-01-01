@@ -6,6 +6,7 @@ public class Wallet{
 	 //float accountBalance;
 	
 	public Wallet() {
+		this.totalFunds = (float) 0;
 	}
 	public Wallet(float totalFunds)
 	{
@@ -15,7 +16,7 @@ public class Wallet{
 	
 	public float getTotalFund()
 	{
-		return totalFunds;
+		return this.totalFunds;
 	}
 	public void setTotalFunds(float totalFunds)
 	{
