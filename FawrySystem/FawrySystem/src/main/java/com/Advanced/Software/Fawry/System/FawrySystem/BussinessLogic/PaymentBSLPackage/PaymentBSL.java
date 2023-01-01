@@ -11,7 +11,7 @@ import com.Advanced.Software.Fawry.System.FawrySystem.Model.Services.SystemServi
 @Service
 public class PaymentBSL {
 	
-	public float payLogic(PaymentInfo paymentInfo,String username )
+	public String payLogic(PaymentInfo paymentInfo,String username )
 	{ 
 		float amount;
 		DiscountsBSL discount = new DiscountsBSL();
@@ -22,9 +22,9 @@ public class PaymentBSL {
 			boolean val=card.pay(paymentInfo.getCreditCardNum(), amount,username,paymentInfo.getServiceName());
 			if(val==true)
 			{
-			return amount;// "paid successfully";
+			return  "paid successfully"+amount;
 			}
-			return amount;//"invalid creditcard or no enough money";
+			return "invalid creditcard or no enough money"+amount;
 		}
 		else if(paymentInfo.getPaymentMethod().equals("wallet"))
 		{
@@ -33,9 +33,9 @@ public class PaymentBSL {
 			boolean val=wallet.pay(amount,username,paymentInfo.getServiceName());
 			if(val==false)
 			{
-				return amount;//"no enough money in wallet";
+				return "no enough money in wallet"+amount;
 			}
-			return amount;//"paid successfully";
+			return "paid successfully"+amount;
 		}
 		
 		else if(paymentInfo.getPaymentMethod().equals("cash"))	
@@ -43,12 +43,12 @@ public class PaymentBSL {
 		
 			if(servicesBSL.searchForService(paymentInfo.getServiceName()).get(0).getPayByCashStatus()==true)
 			{
-				return amount;//"payment method not found";
-		//return ("you can pay by cash"+ amount);
+				//return amount;//"payment method not found";
+				return ("you can pay by cash"+ amount);
 			}
-			return amount;//"not allowed to pay by cash";
+			return "not allowed to pay by cash";
 		}
-		return amount;//"payment method not found";
+		return "payment method not found";
 	
 }
 }

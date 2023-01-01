@@ -41,7 +41,7 @@ public class CreditCardBSL {
 	
 	public boolean pay(String cardnumber, float amount, String username,String serviceName) {
 		PaymentTransactionBSL obj= new PaymentTransactionBSL() ;
-		PaymentTransaction paid;
+		//PaymentTransaction paid;
 		for(int i=0;i<creditCards.size();i++)
 		{
 			if(creditCards.get(i).getcreditCardNum().equals(cardnumber)&&creditCards.get(i).getAccountBalance()>=amount)
@@ -49,12 +49,12 @@ public class CreditCardBSL {
 				creditCards.get(i).setAccountBalance(creditCards.get(i).getAccountBalance()-amount);
 				//System.out.print(creditCards.get(i).getcreditCardNum()+" "+creditCards.get(i).getAccountBalance()+" "+creditCards.get(i).getPassword()+"\n");
 				String value=""+creditCards.get(i).getAccountBalance();
-				paid=new PaymentTransaction("creditcard",serviceName,username,amount,true);
+				PaymentTransaction paid=new PaymentTransaction("creditcard",serviceName,username,amount,true);
 				obj.addToPaymentTransaction(paid);
 				return true;
 			}	
 		}
-		paid=new PaymentTransaction("creditcard",serviceName,username,amount,false);
+		PaymentTransaction paid=new PaymentTransaction("creditcard",serviceName,username,amount,false);
 		obj.addToPaymentTransaction(paid);
 		return false;   //failed transaction
 	

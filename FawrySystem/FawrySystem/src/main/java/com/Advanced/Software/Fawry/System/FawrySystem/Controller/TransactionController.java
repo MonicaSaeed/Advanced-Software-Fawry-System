@@ -40,7 +40,11 @@ public class TransactionController {
     @GetMapping(value="/printAllTransaction")
     public Vector<Transaction> printAllTransaction()
     {
-        Vector<Transaction> allTransactions = new Vector<Transaction>();   
+        Vector<Transaction> allTransactions = new Vector<Transaction>(); 
+        if(walletBSL.printVector().size()==0)
+        {
+            return null;
+        }  
         allTransactions.addAll(0,walletBSL.printVector());
         allTransactions.addAll(allTransactions.size()-1,paymentBSL.printVector());
         allTransactions.addAll(allTransactions.size()-1,paymentBSL.printRefundVector());

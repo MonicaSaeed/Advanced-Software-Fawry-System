@@ -76,18 +76,18 @@ public class WalletBSL {
 	}	
 	
 	public boolean pay(float paymentAmount, String username,String serviceName) {
-		PaymentTransaction paid;
+		//PaymentTransaction paid;
 		PaymentTransactionBSL wallet2=new PaymentTransactionBSL();
 		FawryUser f=checkBalance(paymentAmount,username);
 		if(f!=null)
 		{
 			f.getUserWallet().setTotalFunds(f.getUserWallet().getTotalFund()-paymentAmount);
 			System.out.print("wallet value: "+f.getUserWallet().getTotalFund()+"\n");
-			paid=new PaymentTransaction("wallet",serviceName,username,paymentAmount,true);
+			PaymentTransaction paid=new PaymentTransaction("wallet",serviceName,username,paymentAmount,true);
 			wallet2.addToPaymentTransaction(paid);
 			return true;
 		}
-		paid=new PaymentTransaction("wallet",serviceName,username,paymentAmount,false);
+		PaymentTransaction paid=new PaymentTransaction("wallet",serviceName,username,paymentAmount,false);
 		wallet2.addToPaymentTransaction(paid);
 		return false;
 			

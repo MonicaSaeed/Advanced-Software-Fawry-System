@@ -13,7 +13,7 @@ public class PaymentTransactionBSL {
 	public void addToPaymentTransaction(PaymentTransaction paymentTrans )
 	{
 		paymentTrans.setTransID(payment.size());
-		System.out.println("blaaaaaa "+paymentTrans.getTransID());
+		System.out.println("blaaaaaa "+paymentTrans.getTrasStatus());
 		payment.add(paymentTrans);
 	}
 	public Vector<PaymentTransaction> printVector(){
@@ -53,9 +53,6 @@ public class PaymentTransactionBSL {
 			}
 			
 			return "request rejected";
-			
-
-
 		}
 		return "not allowed";
 	}

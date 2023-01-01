@@ -20,18 +20,18 @@ public class PaymentController {
 	}
 	
 	@PostMapping(value="/payment_info")
-	public float payLogic(@RequestBody PaymentInfo paymentInfo,@CookieValue("username") String username )
+	public String payLogic(@RequestBody PaymentInfo paymentInfo,@CookieValue("username") String username )
 	{
 		return paymentBSL.payLogic(paymentInfo, username);
 	}
 
-   @PostMapping(value="/requestRefund")
-   public String refundRequest(@RequestBody PaymentTransaction transaction)
-   {
-      RefundTransaction refundTransaction= new RefundTransaction(transaction);
-      paymentTransactionBSL.addToRefundTransVector(refundTransaction);
-      return "your request is pending";
-   }
+   // @PostMapping(value="/requestRefund")
+   // public String refundRequest(@RequestBody PaymentTransaction transaction)
+   // {
+   //    RefundTransaction refundTransaction= new RefundTransaction(transaction);
+   //    paymentTransactionBSL.addToRefundTransVector(refundTransaction);
+   //    return "your request is pending";
+   // }
 
    public static class PayWalletInfo{
 		//public CreditCard obj;
@@ -46,9 +46,10 @@ public class PaymentController {
    }
 
    @PostMapping(value="/addRefundRequest")
-   public String addToRefundTransVector(RefundTransaction refundTrans )
+   public String addToRefundTransVector(@RequestBody PaymentTransaction refundTrans )
    {
-      if(paymentTransactionBSL.addToRefundTransVector(refundTrans))
+       RefundTransaction refundTransaction= new RefundTransaction(refundTrans);
+      if(paymentTransactionBSL.addToRefundTransVector(refundTransaction))
       {
          return "your request is pending";
       }
