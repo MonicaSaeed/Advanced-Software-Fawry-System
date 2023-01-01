@@ -4,6 +4,7 @@ public abstract class Transaction {
 	protected String transUserName;
 	protected float transPrice;
 	protected boolean transStatus;
+	protected String transID;
     
     
     //public Transaction() {}
@@ -16,6 +17,13 @@ public abstract class Transaction {
 	}
 	public float getTransPrice() {
 		return this.transPrice;
+	}
+	public String getTransID() {
+		return this.transID;
+	}
+	public void setTransID(String transID)
+	{
+		this.transID=transID;
 	}
 	
 	public void setTransUserName(String serviceUser) {

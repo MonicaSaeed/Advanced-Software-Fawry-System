@@ -8,6 +8,7 @@ public class AddToWalletBSL {
 	
 	public void AddToWalletTransactionVector(AddToWalletTransaction walletTrans)
 	{
+		//walletTrans.setTransID(wallet.size()+"w");
 		wallet.add(walletTrans);
 		
 	}

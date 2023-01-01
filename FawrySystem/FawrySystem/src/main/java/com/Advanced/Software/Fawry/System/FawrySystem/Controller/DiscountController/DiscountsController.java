@@ -20,10 +20,6 @@ public class DiscountsController {
 	public DiscountsController() {
 		discountBSL=new DiscountsBSL();
 	}
-	public FawryUser activeUser(FawryUser fuser)
-	{
-		return fuser;
-	}
 	
 	@PostMapping(value="/discount")
 	public String addDiscount(@CookieValue("usertype") String type, @RequestBody DiscountsController.DiscountInfo discount)

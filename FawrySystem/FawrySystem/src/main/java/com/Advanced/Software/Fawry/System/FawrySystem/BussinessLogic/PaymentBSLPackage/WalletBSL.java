@@ -3,23 +3,32 @@ package com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSL
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.AuthenticationBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.TransactionBSL.AddToWalletBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.TransactionBSL.PaymentTransactionBSL;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.FawryUser;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.Wallet;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions.AddToWalletTransaction;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions.PaymentTransaction;
 @Component
 @Service
 public class WalletBSL {
-	Wallet wallet=new Wallet();
-	public boolean checkBalance(float paymentAmount ) {
-		
-		if(wallet.getTotalFund()<paymentAmount)
+	//Wallet wallet=new Wallet();
+	public FawryUser checkBalance(float paymentAmount,String username ) {
+
+		for(int i=0;i<AuthenticationBSL.fawryUsers.size();i++)
 		{
-			//System.out.print("amount to pay exceeds wallet balance"+wallet.getTotalFund());
-			return false;
+			if(AuthenticationBSL.fawryUsers.get(i).getUserName().equals(username))
+			{
+				if(AuthenticationBSL.fawryUsers.get(i).getUserWallet().getTotalFund()>=paymentAmount)
+				{
+					return AuthenticationBSL.fawryUsers.get(i);
+				}
+				return null;
+			}
 		}
-		return true;
+		return null;
+		
 	} 
 	
 	public boolean addFunds(String number,float amountToBeTransfered,String username)
@@ -33,7 +42,14 @@ public class WalletBSL {
 			if(card.creditCards.get(i).getcreditCardNum().equals(number) &&
 				card.creditCards.get(i).getAccountBalance()>=amountToBeTransfered)
 			{
-				wallet.setTotalFunds(wallet.getTotalFund()+amountToBeTransfered);
+				for(int j=0;i<AuthenticationBSL.fawryUsers.size();j++)
+				{
+					if(AuthenticationBSL.fawryUsers.get(j).getUserName().equals(username))
+					{
+						AuthenticationBSL.fawryUsers.get(j).getUserWallet().setTotalFunds(AuthenticationBSL.fawryUsers.get(j).getUserWallet().getTotalFund()+amountToBeTransfered);
+					}
+
+				}
 				card.creditCards.get(i).setAccountBalance(card.creditCards.get(i).getAccountBalance()-amountToBeTransfered);
 				wallett= new AddToWalletTransaction(number,username,amountToBeTransfered,true);
 				obj.AddToWalletTransactionVector(wallett);
@@ -56,13 +72,15 @@ public class WalletBSL {
 		}*/
 		return found;
 	}	
+	
 	public boolean pay(float paymentAmount, String username,String serviceName) {
 		PaymentTransaction paid;
 		PaymentTransactionBSL wallet2=new PaymentTransactionBSL();
-		if(checkBalance(paymentAmount))
+		FawryUser f=checkBalance(paymentAmount,username);
+		if(f!=null)
 		{
-			wallet.setTotalFunds(wallet.getTotalFund()-paymentAmount);
-			System.out.print("wallet value: "+wallet.getTotalFund()+"\n");
+			f.getUserWallet().setTotalFunds(f.getUserWallet().getTotalFund()-paymentAmount);
+			System.out.print("wallet value: "+f.getUserWallet().getTotalFund()+"\n");
 			paid=new PaymentTransaction("wallet",serviceName,username,paymentAmount,true);
 			wallet2.addToPaymentTransaction(paid);
 			return true;

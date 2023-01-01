@@ -1,11 +1,13 @@
 package com.Advanced.Software.Fawry.System.FawrySystem.Model;
 
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.Wallet;
+
 public class FawryUser {
     private String userName;
 	private String password;
 	private String email;
 	private String userType;  //Check if the user is an admin or not (admin -> admin, userFawry->user)
-	
+	private Wallet userWallet;
 
     FawryUser(){
 		
@@ -15,6 +17,7 @@ public class FawryUser {
 		this.password = password;
 		this.email = email;
 		this. userType = userType;
+		this.userWallet= new Wallet(0);
 	}
 
 	public FawryUser(String email,String password){
@@ -33,6 +36,10 @@ public class FawryUser {
 	}
 	public String getUserType() {
 		return userType;
+	}
+	public Wallet getUserWallet()
+	{
+		return this.userWallet;
 	}
 
 

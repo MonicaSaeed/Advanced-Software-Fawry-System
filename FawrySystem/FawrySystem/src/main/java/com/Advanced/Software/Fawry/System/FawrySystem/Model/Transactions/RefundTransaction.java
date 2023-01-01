@@ -3,15 +3,20 @@ package com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions;
 public class RefundTransaction extends Transaction {
 	private String paymentMethod;
 	private String serviceName;
+	private int status;
 	
-	public RefundTransaction(String paymentMethod, String serviceName,String transUserName,float transPrice,boolean trasStatus) {
-		this.paymentMethod=paymentMethod;
-		this.serviceName=serviceName;
-		super.transUserName=transUserName;
-		super. transPrice=transPrice;
-		super. transStatus=transStatus;	
+	public RefundTransaction(PaymentTransaction paymentTransaction) {
+		this.paymentMethod=paymentTransaction.getPaymentMethod();
+		this.serviceName=paymentTransaction.getserviceName();
+		super.transUserName=paymentTransaction.getTransUserName();
+		super. transPrice=paymentTransaction.getTransPrice();
+		super. transStatus=paymentTransaction.getTrasStatus();
+		this.status=-1;	
 	}
 	public String getPaymentMethod() {return paymentMethod;}
 	public String getserviceName() {return serviceName;}
+	public int getStatus() {
+		return status;
+	}
 
 }

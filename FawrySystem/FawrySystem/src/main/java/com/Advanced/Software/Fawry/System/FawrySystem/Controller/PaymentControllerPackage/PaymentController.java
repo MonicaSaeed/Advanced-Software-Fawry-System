@@ -5,13 +5,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSLPackage.PaymentBSL;
+import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.TransactionBSL.PaymentTransactionBSL;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.PaymentInfo;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions.PaymentTransaction;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.Transactions.RefundTransaction;
 @RestController
 public class PaymentController {
 	PaymentBSL paymentBSL;
+   PaymentTransactionBSL paymentTransactionBSL;
 	public PaymentController()
 	{
 		paymentBSL=new PaymentBSL();
+      paymentTransactionBSL=new PaymentTransactionBSL();
 	}
 	
 	@PostMapping(value="/payment_info")
@@ -19,6 +24,30 @@ public class PaymentController {
 	{
 		return paymentBSL.payLogic(paymentInfo, username);
 	}
+
+   @PostMapping(value="/requestRefund")
+   public String refundRequest(@RequestBody PaymentTransaction transaction)
+   {
+      RefundTransaction refundTransaction= new RefundTransaction(transaction);
+      paymentTransactionBSL.addToRefundTransVector(refundTransaction);
+      return "your request is pending";
+   }
+
+   @PostMapping(value="/dealWithRefundRequest")
+   public String dealWithRefundRequest(@RequestBody String paymentTransactionID,@RequestBody boolean response,@CookieValue("usertype")String type )
+   {
+      return paymentTransactionBSL.dealWithRefundRequest(paymentTransactionID,response,type);
+   }
+
+   @PostMapping(value="/addRefundRequest")
+   public String addToRefundTransVector(RefundTransaction refundTrans )
+   {
+      if(paymentTransactionBSL.addToRefundTransVector(refundTrans))
+      {
+         return "your request is pending";
+      }
+      return "can't add your request";
+   }
 
 }
 /*

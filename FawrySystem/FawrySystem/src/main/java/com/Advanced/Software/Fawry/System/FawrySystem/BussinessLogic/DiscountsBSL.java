@@ -15,7 +15,7 @@ import com.Advanced.Software.Fawry.System.FawrySystem.Model.DiscountModel.Specif
 public class DiscountsBSL {
 	
 	public static Vector<Discounts> dList= new Vector<Discounts>();
-	protected ViewDiscount dViewer;
+	//protected ViewDiscount dViewer;
 	/*public boolean (FawryUser user )
 	{
 		return user.getUserType();
@@ -61,10 +61,10 @@ public class DiscountsBSL {
 			return disc;
 		}
 	}
-	public Discounts viewDiscounts(int position)
-	{
-		return dList.get(position);
-	}
+	// public Discounts viewDiscounts(int position)
+	// {
+	// 	return dList.get(position);
+	// }
 	/*public void Dnotify()
 	{
 		dViewer.update(dList);	
