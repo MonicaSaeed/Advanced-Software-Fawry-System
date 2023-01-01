@@ -4,7 +4,6 @@ import java.util.Vector;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Services.Donations;
 import com.Advanced.Software.Fawry.System.FawrySystem.Model.Services.InternetPayment;
@@ -47,7 +46,7 @@ public  class ServicesBSL {
 		MobileRecharge vodafoneM = new MobileRecharge(false);
 		mobileRechargeVec.add(vodafoneM);
 
-		InternetPayment orangeI = new InternetPayment(false);
+		InternetPayment orangeI = new InternetPayment(true);
 		internetPaymentVec.add(orangeI);
 		InternetPayment vodafoneI = new InternetPayment(false);
 		internetPaymentVec.add(vodafoneI);
@@ -59,7 +58,7 @@ public  class ServicesBSL {
 		landlineVec.add(land2);
 
 
-		Donations donation1 = new Donations(false);
+		Donations donation1 = new Donations(true);
 		donationsVec.add(donation1);
 		Donations donation12= new Donations(false);
 		donationsVec.add(donation12);

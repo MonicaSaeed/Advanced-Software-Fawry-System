@@ -2,17 +2,17 @@ package com.Advanced.Software.Fawry.System.FawrySystem.Model.DiscountModel;
 
 
 public abstract class Discounts {
-	protected String dName,dType;
-	protected int dValue;
+	protected String dName,dType,constraints;
+	protected float dValue;
 	//protected DiscountViewer dViewer;
 	
 	
-	public Discounts(String dName, String dType, int dValue) {
-		this.dName=dName;
-		this.dType=dType;
-		this.dValue=dValue;
-		//this.checkValidation=condition;
-	}
+	// public Discounts(String dName, String dType, int dValue) {
+	// 	this.dName=dName;
+	// 	this.dType=dType;
+	// 	this.dValue=dValue;
+	// 	//this.checkValidation=condition;
+	// }
 	public String getDName()
 	{
 		return this.dName;
@@ -21,11 +21,15 @@ public abstract class Discounts {
 	{
 		return this.dType;
 	}
-	public int getDValue()
+	public String getConstraints()
+	{
+		return this.constraints;
+	}
+	public float getDValue()
 	{
 		return this.dValue;
 	}
-		
+	//public abstract boolean checkDiscountValidation(String user);	
 	
 
 }

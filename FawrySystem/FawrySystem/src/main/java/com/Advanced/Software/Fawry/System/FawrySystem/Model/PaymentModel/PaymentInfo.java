@@ -1,4 +1,4 @@
-package com.Advanced.Software.Fawry.System.FawrySystem.Model;
+package com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel;
 
 public class PaymentInfo {
 			private float amount;

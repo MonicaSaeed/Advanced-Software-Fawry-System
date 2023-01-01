@@ -12,7 +12,7 @@ import com.Advanced.Software.Fawry.System.FawrySystem.Model.FawryUser;
 public class DiscountsController {
 	
 	public static class DiscountInfo{
-		public String dName,dType;
+		public String dName,dType,constraints;
 		public int dValue;
 	}
 	private DiscountsBSL discountBSL;
@@ -28,7 +28,7 @@ public class DiscountsController {
 	@PostMapping(value="/discount")
 	public String addDiscount(@CookieValue("usertype") String type, @RequestBody DiscountsController.DiscountInfo discount)
 	{   
-		return discountBSL.addDiscount(discount.dName,discount.dType,discount.dValue,type);
+		return discountBSL.addDiscount(discount.dName,discount.dType,discount.dValue,discount.constraints,type);
 	}
 	
 	

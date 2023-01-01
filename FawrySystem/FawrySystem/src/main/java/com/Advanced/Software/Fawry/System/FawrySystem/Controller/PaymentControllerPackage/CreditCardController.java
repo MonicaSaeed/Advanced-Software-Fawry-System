@@ -29,13 +29,6 @@ public class CreditCardController {
 		public Book getBook(@PathVariable int id, @PathVariable String name) {
 		    // code here
 		}*/
-
-	@PostMapping(value = "/CreditCard") 
-	public boolean makePayment(@RequestBody CreditCardController.PayCreditCardInfo payCredit,@CookieValue("username")String username ,@CookieValue("serviceName") String serviceName)
-	{
-		//System.out.print("blllaa"+payCredit.cardnumber+" "+payCredit.amount);
-		return creditBSL.pay(payCredit.cardnumber, payCredit.amount,username,serviceName);
-	}
 	
 	@RequestMapping(value="/addCard",method = RequestMethod.POST)
 	public String addCard(@RequestBody CreditCard card)

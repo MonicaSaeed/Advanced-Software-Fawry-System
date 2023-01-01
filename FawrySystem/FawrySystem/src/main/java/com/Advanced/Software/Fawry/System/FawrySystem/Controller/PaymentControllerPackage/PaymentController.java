@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.Advanced.Software.Fawry.System.FawrySystem.BussinessLogic.PaymentBSLPackage.PaymentBSL;
-import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentInfo;
+import com.Advanced.Software.Fawry.System.FawrySystem.Model.PaymentModel.PaymentInfo;
 @RestController
 public class PaymentController {
 	PaymentBSL paymentBSL;
@@ -15,7 +15,7 @@ public class PaymentController {
 	}
 	
 	@PostMapping(value="/payment_info")
-	public String payLogic(@RequestBody PaymentInfo paymentInfo,@CookieValue("username") String username )
+	public float payLogic(@RequestBody PaymentInfo paymentInfo,@CookieValue("username") String username )
 	{
 		return paymentBSL.payLogic(paymentInfo, username);
 	}
