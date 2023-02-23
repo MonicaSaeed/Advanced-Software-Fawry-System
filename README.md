@@ -1,8 +1,7 @@
 # Advanced-Software-Fawry-System
 
 ## Description
-In this project will work on building something similar to Fawry system. This system should 
-be user by users to pay for different services. <br />
+In this project will work on building something similar to Fawry system. Users should use this system to pay for different services. <br />
 1- Mobile recharge services <br />
 2- Internet Payment services <br />
 3- Landline services <br />
